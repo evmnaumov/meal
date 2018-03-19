@@ -15,11 +15,11 @@ $mon=$_POST['mon'];
         $mon_4 = explode("\n",$mon[4]);
         $mon_5 = explode("\n",$mon[5]);
 
-        
         for($i=1;$i<=5; ){
         foreach(${'mon_'.$i} as $value){
-            print_r($value);
-            echo "<br>";
+            $name = print_r($value);
+            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$name.'","1","'.$i.'")';
+            
         }
         $i=$i+1;
         }
