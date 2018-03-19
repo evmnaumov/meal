@@ -17,8 +17,7 @@ $mon=$_POST['mon'];
 
         for($i=1;$i<=5; ){
         foreach(${'mon_'.$i} as $value){
-            $name = print_r($value);
-            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$name.'","1","'.$i.'")';
+            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","1","'.$i.'")';
             mysqli_query($link, $query);
         }
         $i=$i+1;
