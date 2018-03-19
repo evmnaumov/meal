@@ -7,6 +7,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 mysqli_select_db($link,'meal');
+mysqli_query($link,"SET NAMES 'utf8'");
 
 $mon=$_POST['mon'];
         $mon_1 = explode("\n",$mon[1]);
