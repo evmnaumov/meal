@@ -50,7 +50,7 @@ foreach ($result as $item) {*/
         <h3>Десерт</h3> 
         <textarea name='mon[5]'></textarea>
 		 <hr>
-
+<!--
         <h1>Вторник</h1> 
         <h3>Салат</h3> 
         <textarea name='tue[1]'></textarea>
@@ -117,7 +117,7 @@ foreach ($result as $item) {*/
 		   
         <h3>Десерт</h3> 
         <textarea name='fri [5]'></textarea>
-		 <hr>
+		 <hr>-->
     <?php
 mysqli_close($link);
 ?>
