@@ -1,12 +1,12 @@
 <?php
     // Соединяемся, выбираем базу данных
 
-$link = mysqli_connect('localhost', 'meal', 'dbywtckfd');
+/*$link = mysqli_connect('localhost', 'meal', 'dbywtckfd');
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$tabs_db = mysqli_select_db($link,'dish');
+$tabs_db = mysqli_select_db($link,'dish');*/
 
 $mon=$_POST['mon'];
         $mon_1 = explode("\n",$mon[1]);
@@ -60,5 +60,5 @@ $fri=$_POST['fri'];
 
 
 
-mysqli_close($link);
+//mysqli_close($link);
 ?>
