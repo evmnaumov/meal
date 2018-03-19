@@ -15,11 +15,12 @@ $mon=$_POST['mon'];
         $mon_4 = explode("\n",$mon[4]);
         $mon_5 = explode("\n",$mon[5]);
 
-        $i=1;
+        
+        for($i=1;$i<=5; $i++){
         foreach(${'mon_'.$i} as $value){
             print_r($value);
             echo "<br>";
-            $i++;
+        }
         }
         
 /*
