@@ -17,7 +17,13 @@ if (mysqli_connect_errno()) {
 }
 $dish = mysqli_select_db($link,'meal');
 $salat= mysqli_query($link,'SELECT * FROM `dish` WHERE meal="1"');
-print_r($salat);
+foreach($salat as $value){
+    echo"$value[id]";
+    echo"$value[name]";
+    echo"$value[day]";
+    echo"$value[meal]";
+    echo"<br>";
+}
 /*
 if($_POST['txt']){
 
