@@ -16,9 +16,10 @@ $mon=$_POST['mon'];
         $mon_5 = explode("\n",$mon[5]);
 
         $i=1;
-        foreach($mon_1 as $value){
+        foreach(${'mon_'.$i} as $value){
             print_r($value);
             echo "<br>";
+            $i++;
         }
         
 /*
