@@ -15,15 +15,11 @@ $mon=$_POST['mon'];
         $mon_4 = explode("\n",$mon[4]);
         $mon_5 = explode("\n",$mon[5]);
 
-        print_r($mon_1);
-        echo "<br>";
-        print_r($mon_2);
-        echo "<br>";
-        print_r($mon_3);
-        echo "<br>";
-        print_r($mon_4);
-        echo "<br>";
-        print_r($mon_5);
+        $i=1;
+        foreach($mon_1 as $value){
+            print_r($value);
+            echo "<br>";
+        }
         
 /*
 $tue=$_POST['tue'];
