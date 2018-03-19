@@ -36,87 +36,87 @@ foreach ($result as $item) {*/
         ?>
         <h1>Понедельник</h1><br>
         <h3>Салат</h3><br>
-        <textarea name='mon_1' value=''>
+        <textarea name='mon_1'></textarea>
 		  <br>
         <h3>Первое</h3><br>
-        <textarea name='mon_2' value=''>
+        <textarea name='mon_2'></textarea>
 		  <br>
         <h3>Основное</h3><br>
-        <textarea name='mon_3' value=''>
+        <textarea name='mon_3'></textarea>
 		  <br>
         <h3>Гарнир</h3><br>
-        <textarea name='mon_4' value=''>
+        <textarea name='mon_4'></textarea>
 		  <br>
         <h3>Десерт</h3><br>
-        <textarea name='mon_5' value=''>
+        <textarea name='mon_5'></textarea>
 		<br><hr>
 
         <h1>Вторник</h1><br>
         <h3>Салат</h3><br>
-        <textarea name='tue_1' value=''>
+        <textarea name='tue_1'></textarea>
 		  <br>
         <h3>Первое</h3><br>
-        <textarea name='tue_2' value=''>
+        <textarea name='tue_2'></textarea>
 		  <br>
         <h3>Основное</h3><br>
-        <textarea name='tue_3' value=''>
+        <textarea name='tue_3'></textarea>
 		  <br>
         <h3>Гарнир</h3><br>
-        <textarea name='tue_4' value=''>
+        <textarea name='tue_4'></textarea>
 		  <br>
         <h3>Десерт</h3><br>
-        <textarea name='tue_5' value=''>
+        <textarea name='tue_5'></textarea>
 		<br><hr>
 
         <h1>Среда</h1><br>
         <h3>Салат</h3><br>
-        <textarea name='wen_1' value=''>
+        <textarea name='wen_1'></textarea>
 		  <br>
         <h3>Первое</h3><br>
-        <textarea name='wen_2' value=''>
+        <textarea name='wen_2'></textarea>
 		  <br>
         <h3>Основное</h3><br>
-        <textarea name='wen_3' value=''>
+        <textarea name='wen_3'></textarea>
 		  <br>
         <h3>Гарнир</h3><br>
-        <textarea name='wen_4' value=''>
+        <textarea name='wen_4'></textarea>
 		  <br>
         <h3>Десерт</h3><br>
-        <textarea name='wen_5' value=''>
+        <textarea name='wen_5'></textarea>
 		<br><hr>
 
         <h1>Четверг</h1><br>
         <h3>Салат</h3><br>
-        <textarea name='thu_1' value=''>
+        <textarea name='thu_1'></textarea>
 		  <br>
         <h3>Первое</h3><br>
-        <textarea name='thu_2' value=''>
+        <textarea name='thu_2'></textarea>
 		  <br>
         <h3>Основное</h3><br>
-        <textarea name='thu_3' value=''>
+        <textarea name='thu_3'></textarea>
 		  <br>
         <h3>Гарнир</h3><br>
-        <textarea name='thu_4' value=''>
+        <textarea name='thu_4'></textarea>
 		  <br>
         <h3>Десерт</h3><br>
-        <textarea name='thu_5' value=''>
+        <textarea name='thu_5'></textarea>
 		<br><hr>
 
         <h1>Пятница</h1><br>
         <h3>Салат</h3><br>
-        <textarea name='fri_1' value=''>
+        <textarea name='fri_1'></textarea>
 		  <br>
         <h3>Первое</h3><br>
-        <textarea name='fri_2' value=''>
+        <textarea name='fri_2'></textarea>
 		  <br>
         <h3>Основное</h3><br>
-        <textarea name='fri_3' value=''>
+        <textarea name='fri_3'></textarea>
 		  <br>
         <h3>Гарнир</h3><br>
-        <textarea name='fri_4' value=''>
+        <textarea name='fri_4'></textarea>
 		  <br>
         <h3>Десерт</h3><br>
-        <textarea name='fri_5' value=''>
+        <textarea name='fri_5'></textarea>
 		<br><hr>
     <?php
 mysqli_close($link);
