@@ -34,90 +34,90 @@ if($_POST['txt']){
 $result = mysqli_query($link,'SELECT * FROM `test`');
 foreach ($result as $item) {*/
         ?>
-        <h1>Понедельник</h1><br>
-        <h3>Салат</h3><br>
+        <h1>Понедельник</h1> 
+        <h3>Салат</h3> 
         <textarea name='mon_1'></textarea>
-		  <br>
-        <h3>Первое</h3><br>
+		   
+        <h3>Первое</h3> 
         <textarea name='mon_2'></textarea>
-		  <br>
-        <h3>Основное</h3><br>
+		   
+        <h3>Основное</h3> 
         <textarea name='mon_3'></textarea>
-		  <br>
-        <h3>Гарнир</h3><br>
+		   
+        <h3>Гарнир</h3> 
         <textarea name='mon_4'></textarea>
-		  <br>
-        <h3>Десерт</h3><br>
+		   
+        <h3>Десерт</h3> 
         <textarea name='mon_5'></textarea>
-		<br><hr>
+		 <hr>
 
-        <h1>Вторник</h1><br>
-        <h3>Салат</h3><br>
+        <h1>Вторник</h1> 
+        <h3>Салат</h3> 
         <textarea name='tue_1'></textarea>
-		  <br>
-        <h3>Первое</h3><br>
+		   
+        <h3>Первое</h3> 
         <textarea name='tue_2'></textarea>
-		  <br>
-        <h3>Основное</h3><br>
+		   
+        <h3>Основное</h3> 
         <textarea name='tue_3'></textarea>
-		  <br>
-        <h3>Гарнир</h3><br>
+		   
+        <h3>Гарнир</h3> 
         <textarea name='tue_4'></textarea>
-		  <br>
-        <h3>Десерт</h3><br>
+		   
+        <h3>Десерт</h3> 
         <textarea name='tue_5'></textarea>
-		<br><hr>
+		 <hr>
 
-        <h1>Среда</h1><br>
-        <h3>Салат</h3><br>
+        <h1>Среда</h1> 
+        <h3>Салат</h3> 
         <textarea name='wen_1'></textarea>
-		  <br>
-        <h3>Первое</h3><br>
+		   
+        <h3>Первое</h3> 
         <textarea name='wen_2'></textarea>
-		  <br>
-        <h3>Основное</h3><br>
+		   
+        <h3>Основное</h3> 
         <textarea name='wen_3'></textarea>
-		  <br>
-        <h3>Гарнир</h3><br>
+		   
+        <h3>Гарнир</h3> 
         <textarea name='wen_4'></textarea>
-		  <br>
-        <h3>Десерт</h3><br>
+		   
+        <h3>Десерт</h3> 
         <textarea name='wen_5'></textarea>
-		<br><hr>
+		 <hr>
 
-        <h1>Четверг</h1><br>
-        <h3>Салат</h3><br>
+        <h1>Четверг</h1> 
+        <h3>Салат</h3> 
         <textarea name='thu_1'></textarea>
-		  <br>
-        <h3>Первое</h3><br>
+		   
+        <h3>Первое</h3> 
         <textarea name='thu_2'></textarea>
-		  <br>
-        <h3>Основное</h3><br>
+		   
+        <h3>Основное</h3> 
         <textarea name='thu_3'></textarea>
-		  <br>
-        <h3>Гарнир</h3><br>
+		   
+        <h3>Гарнир</h3> 
         <textarea name='thu_4'></textarea>
-		  <br>
-        <h3>Десерт</h3><br>
+		   
+        <h3>Десерт</h3> 
         <textarea name='thu_5'></textarea>
-		<br><hr>
+		 <hr>
 
-        <h1>Пятница</h1><br>
-        <h3>Салат</h3><br>
+        <h1>Пятница</h1> 
+        <h3>Салат</h3> 
         <textarea name='fri_1'></textarea>
-		  <br>
-        <h3>Первое</h3><br>
+		   
+        <h3>Первое</h3> 
         <textarea name='fri_2'></textarea>
-		  <br>
-        <h3>Основное</h3><br>
+		   
+        <h3>Основное</h3> 
         <textarea name='fri_3'></textarea>
-		  <br>
-        <h3>Гарнир</h3><br>
+		   
+        <h3>Гарнир</h3> 
         <textarea name='fri_4'></textarea>
-		  <br>
-        <h3>Десерт</h3><br>
+		   
+        <h3>Десерт</h3> 
         <textarea name='fri_5'></textarea>
-		<br><hr>
+		 <hr>
     <?php
 mysqli_close($link);
 ?>
