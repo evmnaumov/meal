@@ -15,8 +15,8 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$tabs_db = mysqli_select_db($link,'tabs');
-
+$tabs_db = mysqli_select_db($link,'dish');
+/*
 if($_POST['txt']){
 
     mysqli_query($link, 'DELETE FROM `test`');
@@ -32,28 +32,95 @@ if($_POST['txt']){
 }
 
 $result = mysqli_query($link,'SELECT * FROM `test`');
-$i=1;
-foreach ($result as $item) {
-    global $i;
-    $a="";
-    if($i<1){
-        $a="showing";
-    };
-        ?><input type='text' name='txt[<?php echo $i;?>][image]' value='<?php echo $item["image"];?>'>
-          <input type='text' name='txt[<?php echo $i;?>][title]' value='<?php echo $item["title"];?>'>
-          <input type='text' name='txt[<?php echo $i;?>][price]' value='<?php echo $item["price"];?>'>
-          <input type='text' name='txt[<?php echo $i;?>][description]' value='<?php echo $item["description"];?>'>
+foreach ($result as $item) {*/
+        ?>
+        <h1>Понедельник</h1><br>
+        <h3>Салат</h3><br>
+        <input type='textarea' name='mon_1' value=''>
 		  <br>
+        <h3>Первое</h3><br>
+        <input type='textarea' name='mon_2' value=''>
+		  <br>
+        <h3>Основное</h3><br>
+        <input type='textarea' name='mon_3' value=''>
+		  <br>
+        <h3>Гарнир</h3><br>
+        <input type='textarea' name='mon_4' value=''>
+		  <br>
+        <h3>Десерт</h3><br>
+        <input type='textarea' name='mon_5' value=''>
+		<br><hr>
+
+        <h1>Вторник</h1><br>
+        <h3>Салат</h3><br>
+        <input type='textarea' name='tue_1' value=''>
+		  <br>
+        <h3>Первое</h3><br>
+        <input type='textarea' name='tue_2' value=''>
+		  <br>
+        <h3>Основное</h3><br>
+        <input type='textarea' name='tue_3' value=''>
+		  <br>
+        <h3>Гарнир</h3><br>
+        <input type='textarea' name='tue_4' value=''>
+		  <br>
+        <h3>Десерт</h3><br>
+        <input type='textarea' name='tue_5' value=''>
+		<br><hr>
+
+        <h1>Среда</h1><br>
+        <h3>Салат</h3><br>
+        <input type='textarea' name='wen_1' value=''>
+		  <br>
+        <h3>Первое</h3><br>
+        <input type='textarea' name='wen_2' value=''>
+		  <br>
+        <h3>Основное</h3><br>
+        <input type='textarea' name='wen_3' value=''>
+		  <br>
+        <h3>Гарнир</h3><br>
+        <input type='textarea' name='wen_4' value=''>
+		  <br>
+        <h3>Десерт</h3><br>
+        <input type='textarea' name='wen_5' value=''>
+		<br><hr>
+
+        <h1>Четверг</h1><br>
+        <h3>Салат</h3><br>
+        <input type='textarea' name='thu_1' value=''>
+		  <br>
+        <h3>Первое</h3><br>
+        <input type='textarea' name='thu_2' value=''>
+		  <br>
+        <h3>Основное</h3><br>
+        <input type='textarea' name='thu_3' value=''>
+		  <br>
+        <h3>Гарнир</h3><br>
+        <input type='textarea' name='thu_4' value=''>
+		  <br>
+        <h3>Десерт</h3><br>
+        <input type='textarea' name='thu_5' value=''>
+		<br><hr>
+
+        <h1>Пятница</h1><br>
+        <h3>Салат</h3><br>
+        <input type='textarea' name='fri_1' value=''>
+		  <br>
+        <h3>Первое</h3><br>
+        <input type='textarea' name='fri_2' value=''>
+		  <br>
+        <h3>Основное</h3><br>
+        <input type='textarea' name='fri_3' value=''>
+		  <br>
+        <h3>Гарнир</h3><br>
+        <input type='textarea' name='fri_4' value=''>
+		  <br>
+        <h3>Десерт</h3><br>
+        <input type='textarea' name='fri_5' value=''>
+		<br><hr>
     <?php
-    $i=$i+1;
-};
 mysqli_close($link);
 ?>
-        <input type='text' name='txt[0][image]' value=''>
-        <input type='text' name='txt[0][title]' value=''>
-        <input type='text' name='txt[0][price]' value=''>
-        <input type='text' name='txt[0][description]' value=''>
-		</br>
         <input type='submit' value='Сохранить'>
 </form>
 </div>
