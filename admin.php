@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $dish = mysqli_select_db($link,'meal');
-$salat= mysqli_query('SELECT * FROM `dish` WHERE meal="1"');
+$salat= mysqli_query($link,'SELECT * FROM `dish` WHERE meal="1"');
 print_r($salat);
 /*
 if($_POST['txt']){
