@@ -15,22 +15,24 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$tabs_db = mysqli_select_db($link,'dish');
+$dish = mysqli_select_db($link,'meal');
+$salat= mysqli_query('SELECT * FROM `dish` WHERE meal="1"');
+print_r($salat);
 /*
 if($_POST['txt']){
 
     mysqli_query($link, 'DELETE FROM `test`');
     $arr=$_POST['txt'];
-    foreach($arr as $value){
-        $image = $value["image"];
+    foreach($dish as $value){
+        $image = $value["name"];
         $title = $value["title"];
         $price = $value["price"];
         $desc = $value["description"];
-        $query = 'INSERT INTO test (image, title, price, description) VALUES ("'.$image.'","'.$title.'","'.$price.'","'.$desc.'")';
-        mysqli_query($link, $query);
+        //$query = 'INSERT INTO test (image, title, price, description) VALUES ("'.$image.'","'.$title.'","'.$price.'","'.$desc.'")';
+        //mysqli_query($link, $query);
     }
 }
-
+/*
 $result = mysqli_query($link,'SELECT * FROM `test`');
 foreach ($result as $item) {*/
         ?>
