@@ -5,7 +5,7 @@
 </head>
 <body>
 <div id="content">
-<form action='admin.php' method='post'>
+<form action='do.php' method='post'>
 <?php
 //$xml = simplexml_load_file("db.xml");
 
@@ -36,87 +36,87 @@ foreach ($result as $item) {*/
         ?>
         <h1>Понедельник</h1> 
         <h3>Салат</h3> 
-        <textarea name='mon_1'></textarea>
+        <textarea name='mon[1]'></textarea>
 		   
         <h3>Первое</h3> 
-        <textarea name='mon_2'></textarea>
+        <textarea name='mon[2]'></textarea>
 		   
         <h3>Основное</h3> 
-        <textarea name='mon_3'></textarea>
+        <textarea name='mon[3]'></textarea>
 		   
         <h3>Гарнир</h3> 
-        <textarea name='mon_4'></textarea>
+        <textarea name='mon[4]'></textarea>
 		   
         <h3>Десерт</h3> 
-        <textarea name='mon_5'></textarea>
+        <textarea name='mon[5]'></textarea>
 		 <hr>
 
         <h1>Вторник</h1> 
         <h3>Салат</h3> 
-        <textarea name='tue_1'></textarea>
+        <textarea name='tue[1]'></textarea>
 		   
         <h3>Первое</h3> 
-        <textarea name='tue_2'></textarea>
+        <textarea name='tue[2]'></textarea>
 		   
         <h3>Основное</h3> 
-        <textarea name='tue_3'></textarea>
+        <textarea name='tue [3]'></textarea>
 		   
         <h3>Гарнир</h3> 
-        <textarea name='tue_4'></textarea>
+        <textarea name='tue [4]'></textarea>
 		   
         <h3>Десерт</h3> 
-        <textarea name='tue_5'></textarea>
+        <textarea name='tue [5]'></textarea>
 		 <hr>
 
         <h1>Среда</h1> 
         <h3>Салат</h3> 
-        <textarea name='wen_1'></textarea>
+        <textarea name='wen [1]'></textarea>
 		   
         <h3>Первое</h3> 
-        <textarea name='wen_2'></textarea>
+        <textarea name='wen [2]'></textarea>
 		   
         <h3>Основное</h3> 
-        <textarea name='wen_3'></textarea>
+        <textarea name='wen [3]'></textarea>
 		   
         <h3>Гарнир</h3> 
-        <textarea name='wen_4'></textarea>
+        <textarea name='wen [4]'></textarea>
 		   
         <h3>Десерт</h3> 
-        <textarea name='wen_5'></textarea>
+        <textarea name='wen [5]'></textarea>
 		 <hr>
 
         <h1>Четверг</h1> 
         <h3>Салат</h3> 
-        <textarea name='thu_1'></textarea>
+        <textarea name='thu [1]'></textarea>
 		   
         <h3>Первое</h3> 
-        <textarea name='thu_2'></textarea>
+        <textarea name='thu [2]'></textarea>
 		   
         <h3>Основное</h3> 
-        <textarea name='thu_3'></textarea>
+        <textarea name='thu [3]'></textarea>
 		   
         <h3>Гарнир</h3> 
-        <textarea name='thu_4'></textarea>
+        <textarea name='thu [4]'></textarea>
 		   
         <h3>Десерт</h3> 
-        <textarea name='thu_5'></textarea>
+        <textarea name='thu [5]'></textarea>
 		 <hr>
 
         <h1>Пятница</h1> 
         <h3>Салат</h3> 
-        <textarea name='fri_1'></textarea>
+        <textarea name='fri [1]'></textarea>
 		   
         <h3>Первое</h3> 
-        <textarea name='fri_2'></textarea>
+        <textarea name='fri [2]'></textarea>
 		   
         <h3>Основное</h3> 
-        <textarea name='fri_3'></textarea>
+        <textarea name='fri [3]'></textarea>
 		   
         <h3>Гарнир</h3> 
-        <textarea name='fri_4'></textarea>
+        <textarea name='fri [4]'></textarea>
 		   
         <h3>Десерт</h3> 
-        <textarea name='fri_5'></textarea>
+        <textarea name='fri [5]'></textarea>
 		 <hr>
     <?php
 mysqli_close($link);
