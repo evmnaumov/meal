@@ -10,7 +10,7 @@
 //$xml = simplexml_load_file("db.xml");
 
 // Соединяемся, выбираем базу данных
-$link = mysqli_connect('localhost', 'tabs', 'rebOOt365');
+$link = mysqli_connect('localhost', 'meal', 'dbywtckfd');
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
