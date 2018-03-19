@@ -6,7 +6,7 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$tabs_db = mysqli_select_db($link,'dish');
+mysqli_select_db($link,'meal');
 
 $mon=$_POST['mon'];
         $mon_1 = explode("\n",$mon[1]);
