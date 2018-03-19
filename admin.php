@@ -15,10 +15,12 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$dish = mysqli_select_db($link,'meal');
-$salat= mysqli_query($link,'SELECT * FROM `dish` WHERE meal="1"');
-foreach($salat as $value){
-    echo"$value[id]";
+$meal = mysqli_select_db($link,'meal');
+
+$dish= mysqli_query($link,'SELECT * FROM `dish`');
+print_r($dish);
+/*foreach($salat as $value){
+    echo"$value[dish_id]";
     echo"$value[name]";
     echo"$value[day]";
     echo"$value[meal]";
