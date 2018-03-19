@@ -15,7 +15,8 @@ $mon=$_POST['mon'];
         $mon_4 = explode("\n",$mon[4]);
         $mon_5 = explode("\n",$mon[5]);
 
-        echo "$mon_1, $mon_2, $mon_3, $mon_4, $mon_5 <br>"
+        print_r($mon_1, $mon_2, $mon_3, $mon_4, $mon_5);
+        echo "<br>";
         
 /*
 $tue=$_POST['tue'];
