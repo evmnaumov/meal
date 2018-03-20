@@ -39,5 +39,9 @@ else
     echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='http://tvpavlovsk.sk6.ru/'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
    }
 ?>
+<br>
+<form action="logout.php" method="post">
+<input type="submit" name="submit" value="Выйти">
+</form>
 </body>
 </html>

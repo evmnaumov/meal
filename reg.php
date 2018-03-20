@@ -8,7 +8,7 @@
 <!--**** save_user.php - это адрес обработчика.  То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей  отправятся на страничку save_user.php методом "post" ***** -->
   <p>
     <label>Ваш логин::<br></label>
-    <input name="login" type="text" size="15" maxlength="15">
+    <input name="login" type="email">
   </p> 
   <p>
     <label>Ваш пароль:<br></label>

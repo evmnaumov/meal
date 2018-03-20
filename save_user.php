@@ -19,6 +19,7 @@ $login = trim($login);
 $password = trim($password);
 
 
+
 // подключаемся к базе
 include ("bd.php");
 
