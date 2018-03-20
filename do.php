@@ -21,6 +21,7 @@ $mon=$_POST['mon'];
         foreach(${'mon_'.$i} as $value){
             $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","1","'.$i.'")';
             mysqli_query($link, $query);
+            echo $query."<br>";
         }
         $i=$i+1;
         }
@@ -36,6 +37,7 @@ $tue=$_POST['tue'];
             foreach(${'tue_'.$i} as $value){
                 $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","2","'.$i.'")';
                 mysqli_query($link, $query);
+                echo $query."<br>";
             }
             $i=$i+1;
             }
@@ -50,6 +52,7 @@ $wen=$_POST['wen'];
             foreach(${'wen_'.$i} as $value){
                 $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","3","'.$i.'")';
                 mysqli_query($link, $query);
+                echo $query."<br>";
             }
             $i=$i+1;
             }
@@ -64,6 +67,7 @@ $thu=$_POST['thu'];
             foreach(${'thu_'.$i} as $value){
                 $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","4","'.$i.'")';
                 mysqli_query($link, $query);
+                echo $query."<br>";
             }
             $i=$i+1;
             }
@@ -78,6 +82,7 @@ $fri=$_POST['fri'];
             foreach(${'fri_'.$i} as $value){
                 $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","5","'.$i.'")';
                 mysqli_query($link, $query);
+                echo $query."<br>";
             }
             $i=$i+1;
             }
