@@ -16,9 +16,11 @@ foreach($day as $value){
     $j=1;
     foreach($value as $dish){
         $data = explode("\n",$dish);
-        $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$data.'","'.$i.'","'.$j.'")';
-        mysqli_query($link, $query);
-        echo $query."<br>";
+        foreach($data as $text){
+            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$data.'","'.$i.'","'.$j.'")';
+            mysqli_query($link, $query);
+            echo $query."<br>";
+        }
         $j=$j+1;
         }
     $i=$i+1;
