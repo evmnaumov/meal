@@ -39,6 +39,7 @@ switch($i){
 echo "<h1>".$day."</h1>";
 for($j=1;$j<=5;){
 $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE day=".$i." AND meal=".$j."');
+echo $dish;
 $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
@@ -59,7 +60,6 @@ echo "<h3>".$meal."</h3>";
 ?>
 <textarea name='<?php echo $attr_day;?>[<?php echo $j;?>]'></textarea><br>
 <?php
-echo $dish;
 $j=$j+1;
 }
 $i=$i+1;
