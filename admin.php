@@ -5,7 +5,7 @@
 <style>
 #text{
     width: 220px;
-    height: 200px;
+    height: 120px;
 }
 </style>
 </head>
