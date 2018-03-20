@@ -5,7 +5,7 @@
 <style>
 #text{
     width: 220px;
-    height: 120px;
+    height: 125px;
 }
 </style>
 </head>
@@ -15,11 +15,11 @@
 <table border="1">
 <tr>
 <td></td>
-<td>Салат</td>
-<td>Первое</td>
-<td>Основное</td>
-<td>Гарнир</td>
-<td>Десерт</td>
+<td><h4>Салат</h4></td>
+<td><h4>Первое</h4></td>
+<td><h4>Основное</h4></td>
+<td><h4>Гарнир</h4></td>
+<td><h4>Десерт</h4></td>
 </tr>
 <?php
 // Соединяемся, выбираем базу данных
@@ -45,7 +45,7 @@ switch($i){
     case 5: $day = "Пятница";
     break;
 }
-echo "<td><h3>".$day."</h3></td>";
+echo "<td><h4>".$day."</h4></td>";
 for($j=1;$j<=5;){
 $query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$query);
