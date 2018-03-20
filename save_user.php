@@ -31,14 +31,15 @@ exit ("Извините, введённый вами логин уже заре�
 
 // если такого нет, то сохраняем данные
 $pass_hash = hash('sha256', $password);
-$result2 = mysqli_query ($link, 'INSERT INTO users (login,password) VALUES("'.$login.'","'.$pass_hash.'")');
+$query = 'INSERT INTO users (login,password) VALUES("'.$login.'","'.$pass_hash.'")';
+$result2 = mysqli_query($link, $query);
 // Проверяем, есть ли ошибки
 if ($result2=='TRUE')
 {
 echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
 }
-
 else {
 echo "Ошибка! Вы не зарегистрированы.";
+echo $query;
      }
 ?>
