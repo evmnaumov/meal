@@ -23,8 +23,8 @@ $password = trim($password);
 include ("bd.php");
 
 // проверка на существование пользователя с таким же логином
-$result = mysql_query("SELECT id FROM users WHERE login='$login'",$db);
-$myrow = mysql_fetch_array($result);
+$result = mysqli_query($link, "SELECT id FROM users WHERE login='$login'");
+$myrow = mysqli_fetch_array($result);
 if (!empty($myrow['id'])) {
 exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
