@@ -20,11 +20,8 @@ $meal = mysqli_select_db($link,'meal');
 $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
 print_r(array_values($dish));
 //switch($dish as $value)
-/*foreach($salat as $value){
-    echo"$value[dish_id]";
-    echo"$value[name]";
-    echo"$value[day]";
-    echo"$value[meal]";
+foreach($dish as $value){
+    print_r($value);
     echo"<br>";
 }
 /*
