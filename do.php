@@ -10,23 +10,20 @@ mysqli_select_db($link,'meal');
 mysqli_query($link, 'DELETE FROM `dish`');
 mysqli_query($link,"SET NAMES 'utf8'");
 
-$mon=$_POST['mon'];
-        $mon_1 = explode("\n",$mon[1]);
-        $mon_2 = explode("\n",$mon[2]);
-        $mon_3 = explode("\n",$mon[3]);
-        $mon_4 = explode("\n",$mon[4]);
-        $mon_5 = explode("\n",$mon[5]);
-
-        for($i=1;$i<=5; ){
-        foreach(${'mon_'.$i} as $value){
-            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$value.'","1","'.$i.'")';
-            mysqli_query($link, $query);
-            echo $query."<br>";
+$day=$_POST['menu'];
+$i=1;
+foreach($day as $value){
+    $j=1;
+    foreach($value as $dish){
+        $data = explode("\n",$dish);
+        $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$data.'","'.$i.'","'.$j.'")';
+        mysqli_query($link, $query);
+        echo $query."<br>";
+        $j=$j+1;
         }
-        $i=$i+1;
-        }
-        
-
+    $i=$i+1;
+    }
+/*
 $tue=$_POST['tue'];
         $tue_1 = explode("\n",$tue[1]);
         $tue_2 = explode("\n",$tue[2]);
@@ -85,7 +82,7 @@ $fri=$_POST['fri'];
                 echo $query."<br>";
             }
             $i=$i+1;
-            }
+            }*/
 mysqli_close($link);
 
 echo "Данные сохранены!";

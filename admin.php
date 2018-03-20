@@ -21,19 +21,14 @@ mysqli_query($link,"SET NAMES 'utf8'");
 for($i=1;$i<=5;){
 switch($i){
     case 1: $day = "Понедельник";
-            $attr_day = "mon_";
     break;
     case 2: $day = "Вторник";
-            $attr_day = "tue_";
     break;
     case 3: $day = "Среда";
-            $attr_day = "wen_";
     break;
     case 4: $day = "Четверг";
-            $attr_day = "thu_";
     break;
     case 5: $day = "Пятница";
-            $attr_day = "fri_";
     break;
 }
 echo "<h1>".$day."</h1>";
@@ -58,7 +53,7 @@ switch($j){
 }
 echo "<h3>".$meal."</h3>";
 ?>
-<textarea name='<?php echo $attr_day;?>[<?php echo $j;?>]'><?php echo $names;?></textarea><br>
+<textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea><br>
 <?php
 $j=$j+1;
 }
