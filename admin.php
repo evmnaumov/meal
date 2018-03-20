@@ -6,6 +6,15 @@
 <body>
 <div id="content">
 <form action='do.php' method='post'>
+<table border="1">
+<td>
+<tr></tr>
+<tr>Салат</tr>
+<tr>Первое</tr>
+<tr>Основное</tr>
+<tr>Гарнир</tr>
+<tr>Десерт</tr>
+</td>
 <?php
 //$xml = simplexml_load_file("db.xml");
 
@@ -31,7 +40,7 @@ switch($i){
     case 5: $day = "Пятница";
     break;
 }
-echo "<h1>".$day."</h1>";
+echo "<td><tr><h1>".$day."</h1></tr>";
 for($j=1;$j<=5;){
 $query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$query);
@@ -53,103 +62,17 @@ switch($j){
 }
 echo "<h3>".$meal."</h3>";
 ?>
-<textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea><br>
+<tr><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></tr>
 <?php
 $j=$j+1;
 }
+echo "</td>";
 $i=$i+1;
 }
-?>
-
-<!--        <h1>Понедельник</h1> 
-        <h3>Салат</h3> 
-        <textarea name='mon[1]'></textarea>
-		   
-        <h3>Первое</h3> 
-        <textarea name='mon[2]'></textarea>
-		   
-        <h3>Основное</h3> 
-        <textarea name='mon[3]'></textarea>
-		   
-        <h3>Гарнир</h3> 
-        <textarea name='mon[4]'></textarea>
-		   
-        <h3>Десерт</h3> 
-        <textarea name='mon[5]'></textarea>
-		 <hr>
-
-        <h1>Вторник</h1> 
-        <h3>Салат</h3> 
-        <textarea name='tue[1]'></textarea>
-		   
-        <h3>Первое</h3> 
-        <textarea name='tue[2]'></textarea>
-		   
-        <h3>Основное</h3> 
-        <textarea name='tue [3]'></textarea>
-		   
-        <h3>Гарнир</h3> 
-        <textarea name='tue [4]'></textarea>
-		   
-        <h3>Десерт</h3> 
-        <textarea name='tue [5]'></textarea>
-		 <hr>
-
-        <h1>Среда</h1> 
-        <h3>Салат</h3> 
-        <textarea name='wen [1]'></textarea>
-		   
-        <h3>Первое</h3> 
-        <textarea name='wen [2]'></textarea>
-		   
-        <h3>Основное</h3> 
-        <textarea name='wen [3]'></textarea>
-		   
-        <h3>Гарнир</h3> 
-        <textarea name='wen [4]'></textarea>
-		   
-        <h3>Десерт</h3> 
-        <textarea name='wen [5]'></textarea>
-		 <hr>
-
-        <h1>Четверг</h1> 
-        <h3>Салат</h3> 
-        <textarea name='thu [1]'></textarea>
-		   
-        <h3>Первое</h3> 
-        <textarea name='thu [2]'></textarea>
-		   
-        <h3>Основное</h3> 
-        <textarea name='thu [3]'></textarea>
-		   
-        <h3>Гарнир</h3> 
-        <textarea name='thu [4]'></textarea>
-		   
-        <h3>Десерт</h3> 
-        <textarea name='thu [5]'></textarea>
-		 <hr>
-
-        <h1>Пятница</h1> 
-        <h3>Салат</h3> 
-        <textarea name='fri [1]'></textarea>
-		   
-        <h3>Первое</h3> 
-        <textarea name='fri [2]'></textarea>
-		   
-        <h3>Основное</h3> 
-        <textarea name='fri [3]'></textarea>
-		   
-        <h3>Гарнир</h3> 
-        <textarea name='fri [4]'></textarea>
-		   
-        <h3>Десерт</h3> 
-        <textarea name='fri [5]'></textarea>
-		 <hr>-->
-    <?php
 mysqli_close($link);
 ?>
-        <br><hr>
-        <input type='submit' value='Сохранить'>
+</table><br>
+<input type='submit' value='Сохранить'>
 </form>
 </div>
 </body>
