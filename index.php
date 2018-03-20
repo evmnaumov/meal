@@ -8,7 +8,6 @@ session_start();
 </head>
 <body>
 <h2>Главная страница</h2>
-<br>
 <?php
 // Проверяем, пусты ли переменные логина и id пользователя
 if (empty($_SESSION['login']) or empty($_SESSION['id']))
