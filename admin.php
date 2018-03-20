@@ -38,8 +38,9 @@ switch($i){
 }
 echo "<h1>".$day."</h1>";
 for($j=1;$j<=5;){
-$dish= mysqli_query($link,'SELECT name FROM `dish` WHERE day=".$i." AND meal=".$j."');
-echo $dish;
+$query='SELECT name FROM `dish` WHERE day=".$i." AND meal=".$j."';
+$dish= mysqli_query($link,$query);
+echo $query;
 $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
