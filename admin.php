@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $meal = mysqli_select_db($link,'meal');
-
+mysqli_query($link,"SET NAMES 'utf8'");
 $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
 $names=array();
 while ($row = $dish->fetch_array())
