@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 mysqli_select_db($link,'meal');
 mysqli_query($link, 'DELETE FROM `dish`');
-mysqli_query($link, 'ALTER TABLE `dish` AUTO_INCREMENT="1"');
+mysqli_query($link, 'ALTER TABLE `dish` AUTO_INCREMENT=1');
 mysqli_query($link,"SET NAMES 'utf8'");
 
 $day=$_POST['menu'];
