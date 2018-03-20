@@ -22,7 +22,7 @@ $names=array();
 while ($row = $dish->fetch_array())
     $names[] = $row[0];
 $data = implode('\n',$names);
-echo $data;
+
 //switch($dish as $value)
 /*foreach($dish as $value){
     print_r($value);
@@ -48,7 +48,7 @@ foreach ($result as $item) {*/
         ?>
         <h1>Понедельник</h1> 
         <h3>Салат</h3> 
-        <textarea name='mon[1]'></textarea>
+        <textarea name='mon[1]'><?php echo $data;?></textarea>
 		   
         <h3>Первое</h3> 
         <textarea name='mon[2]'></textarea>
