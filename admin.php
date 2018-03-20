@@ -18,9 +18,10 @@ if (mysqli_connect_errno()) {
 $meal = mysqli_select_db($link,'meal');
 
 $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
-print_r(array_values($dish));
+$names=array_column($dish,'name');
+print_r($names);
 //switch($dish as $value)
-foreach($dish as $value){
+/*foreach($dish as $value){
     print_r($value);
     echo"<br>";
 }
