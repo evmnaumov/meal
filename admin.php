@@ -17,38 +17,57 @@ if (mysqli_connect_errno()) {
 }
 $meal = mysqli_select_db($link,'meal');
 mysqli_query($link,"SET NAMES 'utf8'");
-$dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
-$names=array();
+
+for($i=1;$i<=5;){
+switch($i){
+    case 1: $day = "Понедельник";
+            $attr_day = "mon_";
+    break;
+    case 2: $day = "Вторник";
+            $attr_day = "tue_";
+    break;
+    case 3: $day = "Среда";
+            $attr_day = "wen_";
+    break;
+    case 4: $day = "Четверг";
+            $attr_day = "thu_";
+    break;
+    case 5: $day = "Пятница";
+            $attr_day = "fri_";
+    break;
+}
+echo "<h1>".$day."</h1>";
+for($j=1;$j<=5;){
+$dish= mysqli_query($link,'SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
+$data=array();
 while ($row = $dish->fetch_array())
-    $names[] = $row[0];
-$data = implode("\n",$names);
-
-//switch($dish as $value)
-/*foreach($dish as $value){
-    print_r($value);
-    echo"<br>";
+    $data[] = $row[0];
+$names = implode("\n",$data);
+switch($j){
+    case 1: $meal = "Салат";
+    break;
+    case 2: $meal = "Первое";
+    break;
+    case 3: $meal = "Основное";
+    break;
+    case 4: $meal = "Гарнир";
+    break;
+    case 5: $meal = "Десерт";
+    break;
 }
-/*
-if($_POST['txt']){
-
-    mysqli_query($link, 'DELETE FROM `test`');
-    $arr=$_POST['txt'];
-    foreach($dish as $value){
-        $image = $value["name"];
-        $title = $value["title"];
-        $price = $value["price"];
-        $desc = $value["description"];
-        //$query = 'INSERT INTO test (image, title, price, description) VALUES ("'.$image.'","'.$title.'","'.$price.'","'.$desc.'")';
-        //mysqli_query($link, $query);
-    }
+echo "<h3>".$meal."</h3>";
+?>
+<textarea name='<?php echo $attr_day;?>[<?php echo $j;?>]'></textarea>
+<?php
+$j=$j+1;
 }
-/*
-$result = mysqli_query($link,'SELECT * FROM `test`');
-foreach ($result as $item) {*/
-        ?>
-        <h1>Понедельник</h1> 
+$i=$i+1;
+}
+?>
+        
+<!--        <h1>Понедельник</h1> 
         <h3>Салат</h3> 
-        <textarea name='mon[1]'><?php echo $data;?></textarea>
+        <textarea name='mon[1]'></textarea>
 		   
         <h3>Первое</h3> 
         <textarea name='mon[2]'></textarea>
@@ -62,7 +81,7 @@ foreach ($result as $item) {*/
         <h3>Десерт</h3> 
         <textarea name='mon[5]'></textarea>
 		 <hr>
-<!--
+
         <h1>Вторник</h1> 
         <h3>Салат</h3> 
         <textarea name='tue[1]'></textarea>
