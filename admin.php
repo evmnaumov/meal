@@ -21,7 +21,8 @@ $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
 $names=array();
 while ($row = $dish->fetch_array())
     $names[] = $row[0];
-var_dump($names);
+$data = implode("\n",$names);
+echo $data;
 //switch($dish as $value)
 /*foreach($dish as $value){
     print_r($value);
