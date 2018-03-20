@@ -18,7 +18,7 @@ if (mysqli_connect_errno()) {
 $meal = mysqli_select_db($link,'meal');
 
 $dish= mysqli_query($link,'SELECT name FROM `dish` WHERE meal="1"');
-print_r($dish);
+var_dump($dish);
 //switch($dish as $value)
 /*foreach($salat as $value){
     echo"$value[dish_id]";
