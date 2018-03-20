@@ -24,7 +24,7 @@ include ("bd.php");
 
 // проверка на существование пользователя с таким же логином
 $result = mysqli_query($link, "SELECT id FROM users WHERE login='$login'");
-$myrow = mysqli_result::fetch_array($result, MYSQLI_ASSOC);
+$myrow = mysql_fetch_array($result);
 if (!empty($myrow['id'])) {
 exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }

@@ -5,4 +5,11 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $meal = mysqli_select_db($link,'meal');
+
+function mysql_fetch_array($result){
+    if($result){
+    $row =  $result->fetch_assoc();
+    return $row;
+   }
+}
 ?>
