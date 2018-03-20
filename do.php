@@ -1,12 +1,5 @@
 <?php
-    // Соединяемся, выбираем базу данных
-
-$link = mysqli_connect('localhost', 'meal', 'dbywtckfd');
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-}
-mysqli_select_db($link,'meal');
+include ("bd.php");
 mysqli_query($link, 'DELETE FROM `dish`');
 mysqli_query($link, 'ALTER TABLE `dish` AUTO_INCREMENT=1');
 mysqli_query($link,"SET NAMES 'utf8'");

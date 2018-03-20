@@ -15,11 +15,11 @@
 <table border="1">
 <tr>
 <td></td>
-<td><h4>Салат</h4></td>
-<td><h4>Первое</h4></td>
-<td><h4>Основное</h4></td>
-<td><h4>Гарнир</h4></td>
-<td><h4>Десерт</h4></td>
+<td class="col_1"><h4>Салат</h4></td>
+<td class="col_2"><h4>Первое</h4></td>
+<td class="col_3"><h4>Основное</h4></td>
+<td class="col_4"><h4>Гарнир</h4></td>
+<td class="col_5"><h4>Десерт</h4></td>
 </tr>
 <?php
 // Соединяемся, выбираем базу данных
@@ -29,6 +29,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $meal = mysqli_select_db($link,'meal');
+include ("bd.php");
 mysqli_query($link,"SET NAMES 'utf8'");
 
 for($i=1;$i<=5;){
@@ -54,7 +55,7 @@ while ($row = $dish->fetch_array())
     $data[] = $row[0];
 $names = implode("\n",$data);
 ?>
-<td><textarea id="text" name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
+<td class="col_<?php echo $j;?>"><textarea id="text" name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
 <?php
 $j=$j+1;
 }
