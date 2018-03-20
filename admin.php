@@ -48,7 +48,7 @@ $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
 $names = implode("\n",$data);
-switch($j){
+/*switch($j){
     case 1: $meal = "Салат";
     break;
     case 2: $meal = "Первое";
@@ -60,7 +60,7 @@ switch($j){
     case 5: $meal = "Десерт";
     break;
 }
-echo "<h3>".$meal."</h3>";
+echo "<h3>".$meal."</h3>";*/
 ?>
 <tr><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></tr>
 <?php
