@@ -29,7 +29,7 @@ mysqli_query($link,"SET NAMES 'utf8'");
 
 for($i=1;$i<=5;){
     echo "<tr>";
-/*switch($i){
+switch($i){
     case 1: $day = "Понедельник";
     break;
     case 2: $day = "Вторник";
@@ -41,7 +41,7 @@ for($i=1;$i<=5;){
     case 5: $day = "Пятница";
     break;
 }
-echo "<td><tr><b>".$day."</b></tr>";*/
+echo "<td><h3>".$day."</h3></td>";
 for($j=1;$j<=5;){
 $query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$query);
@@ -49,7 +49,7 @@ $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
 $names = implode("\n",$data);
-switch($j){
+/*switch($j){
     case 1: $meal = "Салат";
     break;
     case 2: $meal = "Первое";
@@ -61,7 +61,7 @@ switch($j){
     case 5: $meal = "Десерт";
     break;
 }
-echo "<td><h3>".$meal."</h3></td>";
+echo "<td><h3>".$meal."</h3></td>";*/
 ?>
 <td><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
 <?php
