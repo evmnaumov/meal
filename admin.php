@@ -28,6 +28,7 @@ $meal = mysqli_select_db($link,'meal');
 mysqli_query($link,"SET NAMES 'utf8'");
 
 for($i=1;$i<=5;){
+    echo "<tr>";
 /*switch($i){
     case 1: $day = "Понедельник";
     break;
@@ -60,7 +61,7 @@ switch($j){
     case 5: $meal = "Десерт";
     break;
 }
-echo "<tr><td><h3>".$meal."</h3></td>";
+echo "<td><h3>".$meal."</h3></td>";
 ?>
 <td><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
 <?php
