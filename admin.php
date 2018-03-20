@@ -7,14 +7,14 @@
 <div id="content">
 <form action='do.php' method='post'>
 <table border="1">
-<td>
-<tr></tr>
-<tr>Салат</tr>
-<tr>Первое</tr>
-<tr>Основное</tr>
-<tr>Гарнир</tr>
-<tr>Десерт</tr>
-</td>
+<tr>
+<td></td>
+<td>Салат</td>
+<td>Первое</td>
+<td>Основное</td>
+<td>Гарнир</td>
+<td>Десерт</td>
+</tr>
 <?php
 //$xml = simplexml_load_file("db.xml");
 
@@ -28,7 +28,7 @@ $meal = mysqli_select_db($link,'meal');
 mysqli_query($link,"SET NAMES 'utf8'");
 
 for($i=1;$i<=5;){
-switch($i){
+/*switch($i){
     case 1: $day = "Понедельник";
     break;
     case 2: $day = "Вторник";
@@ -40,7 +40,7 @@ switch($i){
     case 5: $day = "Пятница";
     break;
 }
-echo "<td><tr><h1>".$day."</h1></tr>";
+echo "<td><tr><b>".$day."</b></tr>";*/
 for($j=1;$j<=5;){
 $query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$query);
@@ -48,7 +48,7 @@ $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
 $names = implode("\n",$data);
-/*switch($j){
+switch($j){
     case 1: $meal = "Салат";
     break;
     case 2: $meal = "Первое";
@@ -60,13 +60,13 @@ $names = implode("\n",$data);
     case 5: $meal = "Десерт";
     break;
 }
-echo "<h3>".$meal."</h3>";*/
+echo "<tr><td><h3>".$meal."</h3></td>";
 ?>
-<tr><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></tr>
+<td><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
 <?php
 $j=$j+1;
 }
-echo "</td>";
+echo "</tr>";
 $i=$i+1;
 }
 mysqli_close($link);
