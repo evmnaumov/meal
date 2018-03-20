@@ -2,6 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Messenger</title>
+<style>
+#text{
+    width: 220px;
+    height: 200px;
+}
+</style>
 </head>
 <body>
 <div id="content">
@@ -16,8 +22,6 @@
 <td>Десерт</td>
 </tr>
 <?php
-//$xml = simplexml_load_file("db.xml");
-
 // Соединяемся, выбираем базу данных
 $link = mysqli_connect('localhost', 'meal', 'dbywtckfd');
 if (mysqli_connect_errno()) {
@@ -49,21 +53,8 @@ $data=array();
 while ($row = $dish->fetch_array())
     $data[] = $row[0];
 $names = implode("\n",$data);
-/*switch($j){
-    case 1: $meal = "Салат";
-    break;
-    case 2: $meal = "Первое";
-    break;
-    case 3: $meal = "Основное";
-    break;
-    case 4: $meal = "Гарнир";
-    break;
-    case 5: $meal = "Десерт";
-    break;
-}
-echo "<td><h3>".$meal."</h3></td>";*/
 ?>
-<td><textarea name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
+<td><textarea id="text" name='menu[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></textarea></td>
 <?php
 $j=$j+1;
 }
