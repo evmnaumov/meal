@@ -17,7 +17,7 @@ foreach($day as $value){
     foreach($value as $dish){
         $data = explode("\n",$dish);
         foreach($data as $text){
-            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$data.'","'.$i.'","'.$j.'")';
+            $query = 'INSERT INTO dish (name, day, meal) VALUES ("'.$text.'","'.$i.'","'.$j.'")';
             mysqli_query($link, $query);
             echo $query."<br>";
         }
