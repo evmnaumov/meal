@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("Location: http://".$_SERVER['HTTP_HOST']."/");
+header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
 exit;
 ?>
