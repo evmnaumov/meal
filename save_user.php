@@ -11,6 +11,12 @@ if (isset($_POST['last_name']))
         unset($last_name);
     } 
 }
+if (isset($_POST['location'])) 
+{ $location = $_POST['location']; 
+    if ($location == '') {
+        unset($location);
+    } 
+}
 //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
 if (isset($_POST['login'])) 
 { $login = $_POST['login']; 
@@ -60,7 +66,7 @@ exit ("Извините, введённый вами логин уже заре�
 
 // если такого нет, то сохраняем данные
 $pass_hash = hash('sha256', $password);
-$query = 'INSERT INTO users (login, pass, name, last_name) VALUES("'.$login.'","'.$pass_hash.'","'.$name.'","'.$last_name.'")';
+$query = 'INSERT INTO users (login, pass, name, last_name, location) VALUES("'.$login.'","'.$pass_hash.'","'.$name.'","'.$last_name.'","'.$location.'")';
 $result2 = mysqli_query($link, $query);
 // Проверяем, есть ли ошибки
 if ($result2=='TRUE')
