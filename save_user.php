@@ -1,13 +1,41 @@
 <?php
-if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
-if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
+if (isset($_POST['name'])) 
+{ $name = $_POST['name']; 
+    if ($name == '') {
+        unset($name);
+    } 
+}
+if (isset($_POST['last_name'])) 
+{ $last_name = $_POST['last_name']; 
+    if ($last_name == '') {
+        unset($last_name);
+    } 
+}
+//заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+if (isset($_POST['login'])) 
+{ $login = $_POST['login']; 
+    if ($login == '') {
+        unset($login);
+    } 
+}
 //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
-
-if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+if (isset($_POST['password'])) {
+     $password=$_POST['password'];
+     if ($password =='') { 
+        unset($password);
+    } 
+}
+if (empty($login) or empty($password) or empty($name) or empty($last_name)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
 {
 exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
 }
 //если логин и пароль введены, то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
+$name = stripslashes($name);
+$name = htmlspecialchars($name);
+
+$last_name = stripslashes($last_name);
+$last_name = htmlspecialchars($last_name);
+
 $login = stripslashes($login);
 $login = htmlspecialchars($login);
 
@@ -32,7 +60,7 @@ exit ("Извините, введённый вами логин уже заре�
 
 // если такого нет, то сохраняем данные
 $pass_hash = hash('sha256', $password);
-$query = 'INSERT INTO users (login, pass) VALUES("'.$login.'","'.$pass_hash.'")';
+$query = 'INSERT INTO users (login, pass, name, last_name) VALUES("'.$login.'","'.$pass_hash.'","'.$name.'","'.$last_name.'")';
 $result2 = mysqli_query($link, $query);
 // Проверяем, есть ли ошибки
 if ($result2=='TRUE')
