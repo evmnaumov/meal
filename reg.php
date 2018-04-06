@@ -13,6 +13,18 @@
   <p>
     <label>Ваша фамилия::<br></label>
     <input name="last_name" type="email">
+  </p>
+  <p>
+    <select>
+    <?php
+    include ("db.php");
+    $query = 'SELECT * FROM location';
+    $options = mysqli_query($link, $query);
+    foreach($options as $value){
+     echo "<option value=".$value['loc_id'].">".$value['location']."</option>";
+    }
+    ?>
+    </select>
   </p> 
   <p>
     <label>Ваш логин::<br></label>
