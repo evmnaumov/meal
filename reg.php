@@ -17,7 +17,7 @@
   <p>
     <select>
     <?php
-    include ("db.php");
+    include ("bd.php");
     $query = 'SELECT * FROM location';
     $options = mysqli_query($link, $query);
     foreach($options as $value){
