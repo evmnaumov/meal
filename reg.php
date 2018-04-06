@@ -21,7 +21,7 @@
     $query = 'SELECT * FROM location';
     $options = mysqli_query($link, $query);
     foreach($options as $value){
-     echo "<option value=".$value['loc_id'].">".$value['location']."</option>";
+     echo "<option name=\"location\" value=".$value['loc_id'].">".$value['location']."</option>";
     }
     ?>
     </select>
