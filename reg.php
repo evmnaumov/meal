@@ -15,13 +15,13 @@
     <input name="last_name" type="text">
   </p>
   <p>
-    <select>
+    <select name="location">
     <?php
     include ("bd.php");
     $query = 'SELECT * FROM location';
     $options = mysqli_query($link, $query);
     foreach($options as $value){
-     echo "<option name=\"location\" value=".$value['loc_id'].">".$value['location']."</option>";
+     echo "<option value=".$value['loc_id'].">".$value['location']."</option>";
     }
     ?>
     </select>
