@@ -19,7 +19,7 @@ $password = stripslashes($password);
     include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  
 $result = mysqli_query($link,'SELECT * FROM users WHERE login=`'.login.'`'); //извлекаем из базы все данные о пользователе с введенным логином
-    $user = mysqli_fetch_assoc($result);
+    $user = mysqli_fetch_array($result, MYSQLI_NUM);
     if (empty($user['login']))
     {
     //если пользователя с введенным логином не существует
