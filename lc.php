@@ -60,26 +60,22 @@ echo "<tr>
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
-        $ans = $ans_row[$qday];
+        $ans = $ans_row[''.$qday.''];
         $ameal = explode(",",$ans);
-print_r($ameal);
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
         $a = 0;
-        $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
+        $dish_query='SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
         $dish= mysqli_query($link,$dish_query);
         echo "<!--it works1-->";
         while ($dish_arr = mysqli_fetch_assoc($dish)){
                 $dish_id = $dish_arr['dish_id'];
                 $dish_name = $dish_arr['dish_name'];
-                echo $dish_id;
-                echo $dish_name;
-                echo "<br>";
-                echo "<!--it works2-->";
-
                 //проверяем, выбрана ли позиция
-                if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
+                if ($dish_id = $ameal[''.$a.'']){
                     $sel = "selected";
+                }else{
+                        $sel = "";
                 }
                 echo "<td class=\"col_'.$j.'\">
                         <select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">
