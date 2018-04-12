@@ -66,10 +66,9 @@ while ($ans_row = mysqli_fetch_assoc($answer)){
 //строим таблицу с вариантами и отображаем выбор пользователя*/
 for($j=1;$j<=5;){
         $a = 0;
-        $dish_query='SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
-        $dish= mysqli_query($link,$dish_query);
-        echo "<!--it works1-->";
-        while ($dish_arr = mysqli_fetch_assoc($dish)){
+        $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
+        //$dish= $dish_query);
+        while ($dish_arr = mysqli_fetch_assoc($dish_query)){
                 $dish_id = $dish_arr['dish_id'];
                 $dish_name = $dish_arr['dish_name'];
                 //проверяем, выбрана ли позиция
