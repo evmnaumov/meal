@@ -66,7 +66,10 @@ for($j=1;$j<=5;){
 $a = $j-1;
 $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$dish_query);
-while ($dish_arr = mysqli_fetch_assoc($dish)){
+$dish_arr = mysqli_fetch_assoc($dish);
+foreach($dish_arr as $key=>$value)
+{
+    echo $key - $value;
 ?>
 <td class="col_<?php echo $j;?>">
 <select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
