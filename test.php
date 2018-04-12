@@ -9,4 +9,6 @@ echo $dish_arr['name'];
 echo "<br>";
 }
 }
+
+print_r($_SESSION);
 ?>
