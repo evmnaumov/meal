@@ -36,9 +36,9 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     $_SESSION['location']=$myrow['location'];
     
     echo $_SESSION['login'];
-    echo $myrow['user_id'];
-    echo $myrow['admin'];
-    echo $myrow['location'];
+    echo $_SESSION['user_id'];
+    echo $_SESSION['admin'];
+    echo $_SESSION['location'];
     //header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
     }
  else {
