@@ -81,8 +81,10 @@ if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
 </select></td>
 <?php
 $j=$j+1;
+mysqli_free_result($dish);
 }
 }
+mysqli_free_result($answer);
 }
 echo "</tr>";
 $i=$i+1;
