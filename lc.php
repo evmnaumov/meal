@@ -56,7 +56,7 @@ echo "<td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$_SESSION['user_id'].'"';
 $answer = mysqli_query($link,$answer_query);
-while ($ans_row = fetch_assoc($answer)){
+while ($ans_row = mysqli_fetch_assoc($answer)){
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
 $dish_query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
