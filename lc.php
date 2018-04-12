@@ -72,15 +72,16 @@ for($j=1;$j<=5;){
                 $dish[] = $dish_arr[0];
                 echo "<td class=\"col_$j\">
                         <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
-                foreach($dish as $dish_id=>$dish_name){
+                foreach($dish as $value){
                 //проверяем, выбрана ли позиция
                 /*if ($dish_id = $ameal[''.$a.'']){
                     $sel = "selected";
                 }else{
                         $sel = "";
                 }*/
-                
-                          echo "<option value=".$dish_id.">".$dish_name."</option>";}
+                print_r($value);
+                         // echo "<option value=".$dish_id.">".$dish_name."</option>";
+                        }
                 echo "</select>
                         </td>";
                 $j=$j+1;
