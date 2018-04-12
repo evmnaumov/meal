@@ -13,7 +13,6 @@ session_start();
 <?php
 if ($_SESSION['admin'] == 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
-    echo $_SESSION['admin'];
 }
 ?>
 <form action="logout.php" method="post">
@@ -66,6 +65,9 @@ for($j=1;$j<=5;){
 $a = $j-1;
 $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$dish_query);
+if (!$dish){
+    echo mysqli_errno($dish);
+}
 while ($dish_arr = mysqli_fetch_assoc($dish)){
 ?>
 <td class="col_<?php echo $j;?>">
