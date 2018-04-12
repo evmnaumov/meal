@@ -77,11 +77,12 @@ for($j=1;$j<=5;){
                 }else{
                         $sel = "";
                 }*/
-                echo "<td class=\"col_$j\">
+                print_r($dish_arr);
+                /*echo "<td class=\"col_$j\">
                         <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">
                           <option value=\"$dish_id\" $sel>$dish_name</option>
                         </select>
-                        </td>";
+                        </td>";*/
                 $j=$j+1;
                 $a=$a+1;
                 mysqli_free_result($dish);
