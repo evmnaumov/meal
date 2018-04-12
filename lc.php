@@ -37,7 +37,6 @@ include ("bd.php");
 mysqli_query($link,"SET NAMES 'utf8'");
 
 for($i=1;$i<=5;){
-    echo "<tr>";
 switch($i){
     case 1: $day = "Понедельник";
             $qday= "mon";
@@ -55,6 +54,7 @@ switch($i){
             $qday = "fri";
     break;
 }
+echo "<tr>";
 echo "<td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
@@ -74,7 +74,7 @@ if (!$dish){
 while ($dish_arr = mysqli_fetch_assoc($dish)){
 ?>
 <td class="col_<?php echo $j;?>">
-<select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]' form="answers">
+<select id="list" name="answer[<?php echo $i;?>][<?php echo $j;?>]" form="answers">
 <option value="<?php echo $dish_arr['dish_id']; ?>"
 <?php
 if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
