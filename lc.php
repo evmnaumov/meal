@@ -71,6 +71,9 @@ for($j=1;$j<=5;){
         while ($dish_arr = mysqli_fetch_assoc($dish)){
                 $dish_id = $dish_arr['dish_id'];
                 $dish_name = $dish_arr['dish_name'];
+                echo $dish_id;
+                echo $dish_name;
+                echo "<br>";
 
                 //проверяем, выбрана ли позиция
                 if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
