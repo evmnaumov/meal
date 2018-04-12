@@ -18,9 +18,9 @@ $password = stripslashes($password);
 // подключаемся к базе
     include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  
-$result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
-    $myrow = mysql_fetch_array($result);
-    if (empty($myrow['login']))
+$result = mysqli_query($link,'SELECT * FROM users WHERE login=`'.login.'`'); //извлекаем из базы все данные о пользователе с введенным логином
+    $user = mysqli_fetch_assoc($result);
+    if (empty($user['login']))
     {
     //если пользователя с введенным логином не существует
     exit ("Извините, введённый вами login или пароль неверный.");
@@ -28,12 +28,12 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     else {
     //если существует, то сверяем пароли
     $pass_hash = hash("sha256", $password);
-    if ($myrow['pass']==$pass_hash) {
+    if ($user['pass']==$pass_hash) {
     //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
-    $_SESSION['login']=$myrow['login']; 
-    $_SESSION['user_id']=$myrow['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-    $_SESSION['admin']=$myrow['admin'];
-    $_SESSION['location']=$myrow['location'];
+    $_SESSION['login']=$user['login']; 
+    $_SESSION['user_id']=$user['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
+    $_SESSION['admin']=$user['admin'];
+    $_SESSION['location']=$user['location'];
     
     //asdf
     header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
