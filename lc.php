@@ -70,7 +70,7 @@ for($j=1;$j<=5;){
         //$dish= $dish_query);
         while ($dish_arr = mysqli_fetch_assoc($dish_query)){
                 $dish_id = $dish_arr['dish_id'];
-                $dish_name = $dish_arr['dish_name'];
+                $dish_name = $dish_arr['name'];
                 //проверяем, выбрана ли позиция
                 /*if ($dish_id = $ameal[''.$a.'']){
                     $sel = "selected";
