@@ -69,20 +69,20 @@ for($j=1;$j<=5;){
         $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
         //$dish= $dish_query);
         while ($dish_arr = mysqli_fetch_assoc($dish_query)){
-                $dish_id = $dish_arr['dish_id'];
-                $dish_name = $dish_arr['name'];
+                
+                echo "<td class=\"col_$j\">
+                        <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
+                foreach($dish_arr as $dish_id=>$dish_name){
                 //проверяем, выбрана ли позиция
                 /*if ($dish_id = $ameal[''.$a.'']){
                     $sel = "selected";
                 }else{
                         $sel = "";
                 }*/
-                print_r($dish_arr);
-                /*echo "<td class=\"col_$j\">
-                        <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">
-                          <option value=\"$dish_id\" $sel>$dish_name</option>
-                        </select>
-                        </td>";*/
+                
+                          echo "<option value=\"$dish_id\" $sel>$dish_name</option>";}
+                echo "</select>
+                        </td>";
                 $j=$j+1;
                 $a=$a+1;
                 mysqli_free_result($dish);
