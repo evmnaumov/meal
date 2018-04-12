@@ -13,6 +13,7 @@ session_start();
 <?php
 if ($_SESSION['admin'] = 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
+    echo $_SESSION['admin'];
 }
 ?>
 <form action="logout.php" method="post">
