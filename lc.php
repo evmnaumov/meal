@@ -66,10 +66,7 @@ for($j=1;$j<=5;){
 $a = $j-1;
 $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$dish_query);
-$dish_arr = mysqli_fetch_assoc($dish);
-foreach($dish_arr as $key=>$value)
-{
-    echo $key." - ".$value;
+while ($dish_arr = mysqli_fetch_assoc($dish)){
 ?>
 <td class="col_<?php echo $j;?>">
 <select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
@@ -83,8 +80,6 @@ if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
 
 </select></td>
 <?php
-print_r($ameal);
-print_r($dish_arr);
 $j=$j+1;
 mysqli_free_result($dish);
 }
