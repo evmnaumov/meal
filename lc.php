@@ -75,11 +75,11 @@ while ($dish_arr = mysqli_fetch_assoc($dish)){
     if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
         $sel = "selected";
     }
-echo '
-<td class="col_'.$j.'">
-<select id="list" name="answer['.$i.']['.$j.']" form="answers">
-<option value="'.$dish_arr['dish_id'].'" '.$sel.'>'.$dish_arr['name'].'</option>
-</select></td>';
+$dish_id = $dish_arr['dish_id'];
+$dish_name = $dish_arr['dish_name'];
+echo "<td class=\"col_'.$j.'\">";
+echo "select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">";
+echo "<option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option></select></td>";
 $j=$j+1;
 $a=$a+1;
 mysqli_free_result($dish);
