@@ -1,7 +1,6 @@
 <html>
 <head>
 <title>Выход</title>
-<meta http-equiv="refresh" content="5;<?php echo $_SERVER['HTTP_HOST']; ?>/meal/">
 </head>
 <body>
 <?php
