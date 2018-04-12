@@ -11,7 +11,7 @@ session_start();
 <p>Вы вошли на сайт, как "<?php echo $_SESSION['login']; ?>"</p>
 <br>
 <?php
-if ($_SESSION['admin'] = 1){
+if ($_SESSION['admin'] == 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
     echo $_SESSION['admin'];
 }
