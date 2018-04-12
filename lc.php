@@ -62,7 +62,7 @@ $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
         $ans = $ans_row[$qday];
         $ameal = explode(",",$ans);
-
+print_r($ameal);
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
         $a = 0;
