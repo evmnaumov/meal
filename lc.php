@@ -68,12 +68,14 @@ for($j=1;$j<=5;){
         $a = 0;
         $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
         $dish= mysqli_query($link,$dish_query);
+        echo "it works1";
         while ($dish_arr = mysqli_fetch_assoc($dish)){
                 $dish_id = $dish_arr['dish_id'];
                 $dish_name = $dish_arr['dish_name'];
                 echo $dish_id;
                 echo $dish_name;
                 echo "<br>";
+                echo "it works2";
 
                 //проверяем, выбрана ли позиция
                 if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
