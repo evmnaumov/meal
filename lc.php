@@ -69,7 +69,7 @@ $dish= mysqli_query($link,$dish_query);
 $dish_arr = mysqli_fetch_assoc($dish);
 foreach($dish_arr as $key=>$value)
 {
-    echo $key - $value;
+    echo $key." - ".$value;
 ?>
 <td class="col_<?php echo $j;?>">
 <select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
