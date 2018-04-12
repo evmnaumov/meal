@@ -1,3 +1,9 @@
+<html>
+<head>
+<title>Выход</title>
+<meta http-equiv="refresh" content="5;<?php echo $_SERVER['HTTP_HOST']; ?>/meal/">
+</head>
+<body>
 <?php
     session_start();//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
@@ -31,11 +37,11 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     if ($myrow['pass']==$pass_hash) {
     //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
     $_SESSION['login']=$myrow['login']; 
-    $_SESSION['id']=$myrow['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
+    $_SESSION['user_id']=$myrow['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
     $_SESSION['admin']=$myrow['admin'];
     $_SESSION['location']=$myrow['location'];
-    //echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";
-    header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
+    
+    echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";
     }
  else {
     //если пароли не сошлись
@@ -44,3 +50,5 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     }
     }
     ?>
+    </body>
+    </html>
