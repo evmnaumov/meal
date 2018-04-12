@@ -35,6 +35,7 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     $_SESSION['admin']=$myrow['admin'];
     $_SESSION['location']=$myrow['location'];
     
+    //asdf
     header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
     }
  else {
