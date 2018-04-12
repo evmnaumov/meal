@@ -44,7 +44,8 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     }
     }
   }  
-    ?>
+else{
+  echo<<<html
 <html>
 <head>
 <title>Главная страница</title>
@@ -70,3 +71,5 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
 </p></form>
 </body>
 </html>
+html;
+}
