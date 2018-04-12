@@ -1,6 +1,9 @@
 <?php
 //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
 session_start();
+$login = $_SESSION['login'];
+$user_id = $_SESSION['user_id'];
+$admin = $_SESSION['admin'];
 ?>
 <html>
 <head>
@@ -8,10 +11,10 @@ session_start();
 </head>
 <body>
 <h2>Главная страница</h2>
-<p>Вы вошли на сайт, как "<?php echo $_SESSION['login']; ?>"</p>
+<p>Вы вошли на сайт, как "<?php echo $login; ?>"</p>
 <br>
 <?php
-if ($_SESSION['admin'] == 1){
+if ($admin == 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
 }
 ?>
@@ -54,7 +57,7 @@ switch($i){
 }
 echo "<td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
-$answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$_SESSION['user_id'].'"';
+$answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
 $ans_row = $ans_row[''.$qday.''];
