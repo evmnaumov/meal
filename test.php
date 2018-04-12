@@ -9,6 +9,6 @@ echo $dish_arr['name'];
 echo "<br>";
 }
 }
-
+session_start();
 print_r($_SESSION);
 ?>
