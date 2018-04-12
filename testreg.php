@@ -20,7 +20,7 @@ $password = stripslashes($password);
  
 $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
     $myrow = mysql_fetch_array($result);
-    if (empty($myrow['pass']))
+    if (empty($myrow['login']))
     {
     //если пользователя с введенным логином не существует
     exit ("Извините, введённый вами login или пароль неверный.");
