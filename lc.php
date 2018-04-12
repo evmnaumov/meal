@@ -60,8 +60,8 @@ echo "<tr>
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
-        $ans_row = $ans_row[''.$qday.''];
-        $ameal = explode(",",$ans_row);
+        $ans = $ans_row[$qday];
+        $ameal = explode(",",$ans);
 
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
