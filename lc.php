@@ -62,7 +62,7 @@ $ameal = explode(",",$ans_row);
 
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
-$a = $j-1;
+$a = 0;
 $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$dish_query);
 if (!$dish){
@@ -83,6 +83,7 @@ if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
 </select></td>
 <?php
 $j=$j+1;
+$a=$a+1;
 mysqli_free_result($dish);
 }
 }
