@@ -57,6 +57,7 @@ switch($i){
 echo "<tr>
         <td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
+/*
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
@@ -76,19 +77,19 @@ for($j=1;$j<=5;){
                     $sel = "selected";
                 }else{
                         $sel = "";
-                }
+                }*/
                 echo "<td class=\"col_'.$j.'\">
                         <select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">
                           <option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option>
                         </select>
                         </td>";
-                $j=$j+1;
+                /*$j=$j+1;
                 $a=$a+1;
                 mysqli_free_result($dish);
         }
 }
 mysqli_free_result($answer);
-}
+}*/
 echo "</tr>";
 $i=$i+1;
 }
