@@ -1,14 +1,9 @@
 <?php
 //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
 session_start();
-session_status();
 $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
 $admin = $_SESSION['admin'];
-
-echo $login;
-echo $user_id;
-echo $admin;
 ?>
 <html>
 <head>
@@ -27,7 +22,7 @@ if ($admin == 1){
 <input type="submit" name="submit" value="Выйти">
 </form>
 <div id="content">
-<form action='do.php' method='post'>
+<form action='do.php' method='post' id="answers">
 <table border="1">
 <tr>
 <td></td>
@@ -79,15 +74,15 @@ if (!$dish){
 while ($dish_arr = mysqli_fetch_assoc($dish)){
 ?>
 <td class="col_<?php echo $j;?>">
-<select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
+<select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]' form="answers">
 <option value="<?php echo $dish_arr['dish_id']; ?>"
 <?php
 if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
     echo "selected";
 }
-?>
-><?php echo $dish_arr['name'];?>
-
+?>>
+<?php echo $dish_arr['name'];?>
+</option>
 </select></td>
 <?php
 $j=$j+1;
