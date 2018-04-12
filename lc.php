@@ -73,14 +73,14 @@ for($j=1;$j<=5;){
                 $dish_id = $dish_arr['dish_id'];
                 $dish_name = $dish_arr['dish_name'];
                 //проверяем, выбрана ли позиция
-                if ($dish_id = $ameal[''.$a.'']){
+                /*if ($dish_id = $ameal[''.$a.'']){
                     $sel = "selected";
                 }else{
                         $sel = "";
-                }
-                echo "<td class=\"col_'.$j.'\">
-                        <select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">
-                          <option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option>
+                }*/
+                echo "<td class=\"col_$j\">
+                        <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">
+                          <option value=\"$dish_id\" $sel>$dish_name</option>
                         </select>
                         </td>";
                 $j=$j+1;
