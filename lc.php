@@ -54,36 +54,37 @@ switch($i){
             $qday = "fri";
     break;
 }
-echo "<tr>";
-echo "<td><h4>".$day."</h4></td>";
+echo "<tr>
+        <td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
-$ans_row = $ans_row[''.$qday.''];
-$ameal = explode(",",$ans_row);
+        $ans_row = $ans_row[''.$qday.''];
+        $ameal = explode(",",$ans_row);
 
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
-$a = 0;
-$dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
-$dish= mysqli_query($link,$dish_query);
-if (!$dish){
-    echo mysqli_errno($dish);
-}
-while ($dish_arr = mysqli_fetch_assoc($dish)){
-    if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
-        $sel = "selected";
-    }
-$dish_id = $dish_arr['dish_id'];
-$dish_name = $dish_arr['dish_name'];
-echo "<td class=\"col_'.$j.'\">";
-echo "select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">";
-echo "<option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option></select></td>";
-$j=$j+1;
-$a=$a+1;
-mysqli_free_result($dish);
-}
+        $a = 0;
+        $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
+        $dish= mysqli_query($link,$dish_query);
+        while ($dish_arr = mysqli_fetch_assoc($dish)){
+                $dish_id = $dish_arr['dish_id'];
+                $dish_name = $dish_arr['dish_name'];
+
+                //проверяем, выбрана ли позиция
+                if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
+                    $sel = "selected";
+                }
+                echo "<td class=\"col_'.$j.'\">
+                        <select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">
+                          <option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option>
+                        </select>
+                        </td>";
+                $j=$j+1;
+                $a=$a+1;
+                mysqli_free_result($dish);
+        }
 }
 mysqli_free_result($answer);
 }
