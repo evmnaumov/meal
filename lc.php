@@ -63,7 +63,7 @@ $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
         $ans = $ans_row[''.$qday.''];
         $ameal = explode(",",$ans);
-//строим таблицу с вариантами и отображаем выбор пользователя
+//строим таблицу с вариантами и отображаем выбор пользователя*/
 for($j=1;$j<=5;){
         $a = 0;
         $dish_query='SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
@@ -77,17 +77,17 @@ for($j=1;$j<=5;){
                     $sel = "selected";
                 }else{
                         $sel = "";
-                }*/
+                }
                 echo "<td class=\"col_'.$j.'\">
                         <select id=\"list\" name=\"answer['.$i.']['.$j.']\" form=\"answers\">
                           <option value=\"'.$dish_id.'\" '.$sel.'>'.$dish_name.'</option>
                         </select>
                         </td>";
-                /*$j=$j+1;
+                $j=$j+1;
                 $a=$a+1;
                 mysqli_free_result($dish);
         }
-}
+}/*
 mysqli_free_result($answer);
 }*/
 echo "</tr>";
