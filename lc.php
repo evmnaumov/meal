@@ -70,6 +70,7 @@ for($j=1;$j<=5;){
         //$dish= $dish_query);
         while ($dish_arr = mysqli_fetch_assoc($dish_query)){
                 $dish[] = $dish_arr[0];
+                print_r($dish);
                 echo "<td class=\"col_$j\">
                         <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
                 foreach($dish as $value){
