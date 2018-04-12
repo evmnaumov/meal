@@ -8,10 +8,10 @@ session_start();
 </head>
 <body>
 <h2>Главная страница</h2>
-<p>Вы вошли на сайт, как "<?php echo $_SESSION['login']; ?></p>
+<p>Вы вошли на сайт, как "<?php echo $_SESSION['login']; ?>"</p>
 <br>
 <?php
-if ($_SESSION['user_id'] = 1){
+if ($_SESSION['admin'] = 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
 }
 ?>
