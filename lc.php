@@ -80,7 +80,7 @@ for($j=1;$j<=5;){
                         $sel = "";
                 }*/
                 
-                          echo "<option value=\"$dish_id\" $sel>$dish_name</option>";}
+                          echo "<option value=".$dish_id.">".$dish_name."</option>";}
                 echo "</select>
                         </td>";
                 $j=$j+1;
