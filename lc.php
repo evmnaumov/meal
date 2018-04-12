@@ -62,13 +62,20 @@ $ameal = explode(",",$ans_row);
 
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
+$a = $j-1;
 $dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$dish_query);
 while ($dish_arr = mysqli_fetch_assoc($dish)){
 ?>
 <td class="col_<?php echo $j;?>">
 <select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
-<option><?php echo $names;?>
+<option value="<?php echo $dish_arr['dish_id']; ?>"
+<?php
+if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
+    echo "selected";
+}
+?>
+><?php echo $dish_arr['name'];?>
 
 </select></td>
 <?php
