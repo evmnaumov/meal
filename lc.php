@@ -72,19 +72,14 @@ if (!$dish){
     echo mysqli_errno($dish);
 }
 while ($dish_arr = mysqli_fetch_assoc($dish)){
-?>
-<td class="col_<?php echo $j;?>">
-<select id="list" name="answer[<?php echo $i;?>][<?php echo $j;?>]" form="answers">
-<option value="<?php echo $dish_arr['dish_id']; ?>"
-<?php
-if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
-    echo "selected";
-}
-?>>
-<?php echo $dish_arr['name'];?>
-</option>
-</select></td>
-<?php
+    if ($dish_arr['dish_id'] = $ameal[''.$a.'']){
+        $sel = "selected";
+    }
+echo '
+<td class="col_'.$j.'">
+<select id="list" name="answer['.$i.']['.$j.']" form="answers">
+<option value="'.$dish_arr['dish_id'].'" '.$sel.'>'.$dish_arr['name'].'</option>
+</select></td>';
 $j=$j+1;
 $a=$a+1;
 mysqli_free_result($dish);
