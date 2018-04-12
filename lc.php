@@ -57,17 +57,22 @@ echo "<td><h4>".$day."</h4></td>";
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$_SESSION['user_id'].'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
+$ans_row = $ans_row[''.$qday.''];
+$ameal = explode(",",$ans_row);
+
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
-$dish_query='SELECT name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
+$dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"';
 $dish= mysqli_query($link,$query);
 $data=array();
-while ($row = $dish->fetch_array())
+while ($row = mysqli_fetch_assoc($dish))
     $data[] = $row[0];
-$names = implode("\n",$data);
 ?>
 <td class="col_<?php echo $j;?>">
-<select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'><?php echo $names;?></select></td>
+<select id="list" name='answer[<?php echo $i;?>][<?php echo $j;?>]'>
+<option><?php echo $names;?>
+
+</select></td>
 <?php
 $j=$j+1;
 }
