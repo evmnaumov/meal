@@ -69,7 +69,7 @@ for($j=1;$j<=5;){
         $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
         //$dish= $dish_query);
         while ($dish_arr = mysqli_fetch_assoc($dish_query)){
-                
+                print_r($dish_arr);
                 echo "<td class=\"col_$j\">
                         <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
                 foreach($dish_arr as $dish_id=>$dish_name){
