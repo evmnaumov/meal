@@ -23,6 +23,7 @@ foreach($day as $value){
         }
     $i=$i+1;
     }*/
+echo $login;
 print_r($_POST);
 mysqli_close($link);
 
