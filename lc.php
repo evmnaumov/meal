@@ -65,9 +65,9 @@ while ($ans_row = mysqli_fetch_row($answer)){
         $ameal = explode(",",$ans);
 }
 mysqli_free_result($answer);
+$a = 0;
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
-        $a = 0;
         echo "<td class=\"col_$j\">
                 <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">
                 <option value=\"non\">--".$a."---</option>";
