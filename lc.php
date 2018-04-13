@@ -80,7 +80,7 @@ for($j=1;$j<=5;){
                 if($sel_meal==$dish_id){
                         $sel = "selected=\"selcted\"";
                 }
-                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name."</option>";
+                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name, $sel_meal."</option>";
         }
         mysqli_free_result($dish_query);
         echo "</select>
