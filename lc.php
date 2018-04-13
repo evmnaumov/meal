@@ -57,12 +57,11 @@ switch($i){
 echo "<tr>
         <td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
-/*
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
         $ans = $ans_row[''.$qday.''];
-        $ameal = explode(",",$ans);*/
+        $ameal = explode(",",$ans);
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
         $a = 0;
@@ -88,11 +87,11 @@ for($j=1;$j<=5;){
                         </td>";
 $j=$j+1;
 }
-//}
+}
 echo "</tr>";
 $i=$i+1;
 }
-//mysqli_free_result($answer);
+mysqli_free_result($answer);
 mysqli_close($link);
 ?>
 </table><br>
