@@ -81,7 +81,7 @@ for($j=1;$j<=5;){
                 if($ameal==$dish_id){
                         $sel = "selected";
                 }
-        }       
+        }
                 echo "<option value=".$dish_id, $sel.">".$dish_name."</option>";
                 $a=$a+1;
         }
@@ -90,9 +90,9 @@ for($j=1;$j<=5;){
                         </td>";
 $j=$j+1;
 }
-}
 echo "</tr>";
 $i=$i+1;
+}
 mysqli_close($link);
 ?>
 </table><br>
