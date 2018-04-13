@@ -34,7 +34,7 @@ foreach($day as $value){
         $str = "fri=\"".$data."\"";
         break;
    }
-$ans_query = `UPDATE answers SET $str WHERE user_id="$user_id"`; 
+$ans_query = 'UPDATE answers SET '.$str.' WHERE user_id="'.$user_id.'"'; 
 mysqli_query($link, $ans_query);  
 $i=$i+1;
 }
