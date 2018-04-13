@@ -86,17 +86,17 @@ for($j=1;$j<=5;){
                 echo "<option value=".$nothing.">-----</option>";
                 echo "<option value=".$dish_id, $sel.">".$dish_name."</option>";
                 $a=$a+1;
-                mysqli_free_result($dish_query);
         }
+        mysqli_free_result($dish_query);
         echo "</select>
                         </td>";
 $j=$j+1;
 }
-//mysqli_free_result($answer);
 //}
 echo "</tr>";
 $i=$i+1;
 }
+//mysqli_free_result($answer);
 mysqli_close($link);
 ?>
 </table><br>
