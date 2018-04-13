@@ -81,9 +81,9 @@ for($j=1;$j<=5;){
                         $sel = "selected=\"selcted\"";
                 }
                 echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name."</option>";
-                $a=$a+1;
         }
         mysqli_free_result($dish_query);
+        $a=$a+1;
         echo "</select>
                         </td>";
 $j=$j+1;
