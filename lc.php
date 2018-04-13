@@ -81,7 +81,7 @@ for($j=1;$j<=5;){
                 if($sel_meal==$dish_id){
                         $sel = "selected";
                 }
-                echo "<option value=".$dish_id, $sel.">".$dish_name, $sel_meal."</option>";
+                echo "<option value=".$dish_id, $sel.">".$dish_id, $dish_name, $sel_meal."</option>";
                 $a=$a+1;
         }
         mysqli_free_result($dish_query);
