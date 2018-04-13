@@ -79,9 +79,9 @@ for($j=1;$j<=5;){
                 $sel_meal = $ameal[''.$a.''];
                 $sel = "";
                 if($sel_meal==$dish_id){
-                        $sel = "selected";
+                        $sel = "selected=\"selcted\"";
                 }
-                echo "<option value=\"".$dish_id."\"\"".$sel."\">".$dish_id, $dish_name, $sel_meal."</option>";
+                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_id, $dish_name, $sel_meal."</option>";
                 $a=$a+1;
         }
         mysqli_free_result($dish_query);
