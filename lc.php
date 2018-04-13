@@ -66,29 +66,19 @@ while ($ans_row = mysqli_fetch_assoc($answer)){
 //строим таблицу с вариантами и отображаем выбор пользователя*/
 for($j=1;$j<=5;){
         $a = 0;
+        echo "<td class=\"col_$j\">
+                <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
         $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
-        //$dish= $dish_query);
-        while ($dish_arr = mysqli_fetch_assoc($dish_query)){
-                $dish[] = $dish_arr[0];
-                print_r($dish);
-                echo "<td class=\"col_$j\">
-                        <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
-                foreach($dish as $value){
-                //проверяем, выбрана ли позиция
-                /*if ($dish_id = $ameal[''.$a.'']){
-                    $sel = "selected";
-                }else{
-                        $sel = "";
-                }*/
-                print_r($value);
-                         // echo "<option value=".$dish_id.">".$dish_name."</option>";
-                        }
-                echo "</select>
-                        </td>";
-                $j=$j+1;
+        while ($dish_arr = mysqli_fetch_row($dish_query)){
+                $dish_id = $dish_arr[0];
+                $dish_name = $dish_arr[1];
+                echo "<option value=".$dish_id.">".$dish_name."</option>";
                 $a=$a+1;
                 mysqli_free_result($dish);
         }
+        echo "</select>
+                        </td>";
+        $j=$j+1;
 }/*
 mysqli_free_result($answer);
 }*/
