@@ -62,7 +62,7 @@ $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"'
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
         $ans = $ans_row[0];
-        $ameal[] = explode(",",$ans);
+        $ameal = explode(",",$ans);
 }
 mysqli_free_result($answer);
 //строим таблицу с вариантами и отображаем выбор пользователя
