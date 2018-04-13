@@ -22,7 +22,7 @@ if ($admin == 1){
 <input type="submit" name="submit" value="Выйти">
 </form>
 <div id="content">
-<form action='do.php' method='post' id="answers">
+<form action='save_responses.php' method='post' id="answers">
 <table border="1">
 <tr>
 <td></td>
