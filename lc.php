@@ -63,6 +63,7 @@ $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
         $ans = $ans_row[0];
         $ameal = explode(",",$ans);
+        print_r($ameal);
 }
 mysqli_free_result($answer);
 //строим таблицу с вариантами и отображаем выбор пользователя
