@@ -63,7 +63,6 @@ $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
         $ans = $ans_row[0];
         $ameal = explode(",",$ans);
-        print_r($ameal);
 }
 mysqli_free_result($answer);
 //строим таблицу с вариантами и отображаем выбор пользователя
@@ -81,7 +80,7 @@ for($j=1;$j<=5;){
                 if($sel_meal==$dish_id){
                         $sel = "selected=\"selcted\"";
                 }
-                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_id, $dish_name, $sel_meal."</option>";
+                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name."</option>";
                 $a=$a+1;
         }
         mysqli_free_result($dish_query);
