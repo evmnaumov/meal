@@ -14,30 +14,30 @@ $i=1;
 foreach($day as $value){
    switch($i){
        case 1:
-        $mon = implode(",", $value);
-        echo $mon;
+        $data = implode(",", $value);
+        $str = "mon=\"".$data."\"";
         break;
        case 2:
-        $tue = implode(",", $value);
-        echo $tue;
+        $data = implode(",", $value);
+        $str = "tue=\"".$data."\"";
         break;
        case 3:
-        $wen = implode(",", $value);
-        echo $wen;
+        $data = implode(",", $value);
+        $str = "wen=\"".$data."\"";
         break; 
         case 4:
-        $thu = implode(",", $value);
-        echo $thu;
+        $data = implode(",", $value);
+        $str = "thu=\"".$data."\"";
         break;
         case 5:
-        $fri = implode(",", $value);
-        echo $fri;
+        $data = implode(",", $value);
+        $str = "fri=\"".$data."\"";
         break;
    }
+$ans_query = `UPDATE answers SET $str WHERE user_id="$user_id"`; 
+mysqli_query($link, $ans_query);  
 $i=$i+1;
 }
-echo $login;
-print_r($_POST);
 mysqli_close($link);
 
 //echo "Данные сохранены!";
