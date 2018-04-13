@@ -76,14 +76,12 @@ for($j=1;$j<=5;){
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
                 $dish_name = $dish_arr[1];
-                $ameal = $ameal[''.$a.''];
+                $sel_meal = $ameal[''.$a.''];
                 $sel = "";
-        if(isset($ameal)){
-                if($ameal==$dish_id){
+                if($sel_meal==$dish_id){
                         $sel = "selected";
                 }
-        }
-                echo "<option value=".$dish_id, $sel.">".$dish_name, $ameal."</option>";
+                echo "<option value=".$dish_id, $sel.">".$dish_name, $sel_meal."</option>";
                 $a=$a+1;
         }
         mysqli_free_result($dish_query);
