@@ -62,6 +62,8 @@ $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
         $ans = $ans_row[''.$qday.''];
         $ameal = explode(",",$ans);
+}
+mysqli_free_result($answer);
 //строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
         $a = 0;
@@ -72,13 +74,13 @@ for($j=1;$j<=5;){
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
                 $dish_name = $dish_arr[1];
-                /*$ameal = $ameal[$a];
+                $ameal = $ameal[$a];
         if(isset($ameal)){
+                $sel = "";
                 if($ameal==$dish_id){
                         $sel = "selected";
                 }
-        }*/
-                
+        }       
                 echo "<option value=".$dish_id, $sel.">".$dish_name."</option>";
                 $a=$a+1;
         }
@@ -90,8 +92,6 @@ $j=$j+1;
 }
 echo "</tr>";
 $i=$i+1;
-}
-mysqli_free_result($answer);
 mysqli_close($link);
 ?>
 </table><br>
