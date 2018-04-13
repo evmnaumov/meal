@@ -23,7 +23,7 @@ foreach($day as $value){
         }
     $i=$i+1;
     }*/
-print_r($_POST['asnwer']);
+print_r($_POST);
 mysqli_close($link);
 
 //echo "Данные сохранены!";
