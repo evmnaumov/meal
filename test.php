@@ -1,20 +1,11 @@
 <?php
 include("bd.php");
-for($i=1;$i<=5; $i++){
-$dish_query='SELECT dish_id, name FROM `dish` WHERE day="'.$i.'" AND meal="1"';
-$dish= mysqli_query($link,$dish_query);
-while ($dish_arr = mysqli_fetch_assoc($dish)){
-echo $dish_arr['dish_id'];
-echo $dish_arr['name'];
-echo "<br>";
+$answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
+$answer = mysqli_query($link,$answer_query);
+while ($ans_row = mysqli_fetch_assoc($answer)){
+        $ans = $ans_row[''.$qday.''];
+        $ameal = explode(",",$ans);
+        print_r($ameal);
 }
-}
-session_start();
-$login = $_SESSION['login'];
-$user_id = $_SESSION['user_id'];
-$admin = $_SESSION['admin'];
-
-echo $login;
-echo $user_id;
-echo $admin;
+mysqli_free_result($answer);
 ?>

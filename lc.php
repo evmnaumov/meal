@@ -75,7 +75,7 @@ for($j=1;$j<=5;){
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
                 $dish_name = $dish_arr[1];
-                $ameal = $ameal[$a];
+                $ameal = $ameal['.$a'];
                 $sel = "";
         if(isset($ameal)){
                 if($ameal==$dish_id){
