@@ -70,7 +70,7 @@ $a = 0;
 for($j=1;$j<=5;){
         echo "<td class=\"col_$j\">
                 <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">
-                <option value=\"non\">--".$a."---</option>";
+                <option value=\"non\">-----</option>";
         $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
@@ -80,7 +80,7 @@ for($j=1;$j<=5;){
                 if($sel_meal==$dish_id){
                         $sel = "selected=\"selcted\"";
                 }
-                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name, $sel_meal."</option>";
+                echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name."</option>";
         }
         mysqli_free_result($dish_query);
         echo "</select>
