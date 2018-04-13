@@ -57,31 +57,40 @@ switch($i){
 echo "<tr>
         <td><h4>".$day."</h4></td>";
 //запрашиваем выбор пользователя
-/*
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_assoc($answer)){
         $ans = $ans_row[''.$qday.''];
         $ameal = explode(",",$ans);
-//строим таблицу с вариантами и отображаем выбор пользователя*/
+//строим таблицу с вариантами и отображаем выбор пользователя
 for($j=1;$j<=5;){
         $a = 0;
         echo "<td class=\"col_$j\">
                 <select id=\"list\" name=\"answer[$i][$j]\" form=\"answers\">";
+                        
         $dish_query=mysqli_query($link,'SELECT `dish_id`, `name` FROM `dish` WHERE day="'.$i.'" AND meal="'.$j.'"');
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
                 $dish_name = $dish_arr[1];
-                echo "<option value=".$dish_id.">".$dish_name."</option>";
+                $ameal = $ameal[$a];
+                if($ameal==$dish_id){
+                        $sel = "selected";
+                        $nothing = "";
+                }else{
+                        $sel = "";
+                        $nothing = "selected";
+                }
+                echo "<option value=".$nothing.">-----</option>";
+                echo "<option value=".$dish_id, $sel.">".$dish_name."</option>";
                 $a=$a+1;
-                mysqli_free_result($dish);
+                mysqli_free_result($dish_query);
         }
         echo "</select>
                         </td>";
-        $j=$j+1;
-}/*
+$j=$j+1;
+}
 mysqli_free_result($answer);
-}*/
+}
 echo "</tr>";
 $i=$i+1;
 }
