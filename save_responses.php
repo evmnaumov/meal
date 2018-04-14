@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_POST['answer']){
+if(isset($_POST['answer'])){
 $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
 $admin = $_SESSION['admin'];
