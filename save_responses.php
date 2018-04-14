@@ -4,11 +4,8 @@ $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
 $admin = $_SESSION['admin'];
 include ("bd.php");
-/*if($_POST['answer']){
-    mysqli_query($link, 'DELETE FROM `answers` WHERE user_id="'.$user_id.'"');
-}
-mysqli_query($link,"SET NAMES 'utf8'");
-*/
+if($_POST['answer']){
+
 $day=$_POST['answer'];
 $i=1;
 foreach($day as $value){
@@ -50,4 +47,7 @@ $i=$i+1;
 mysqli_close($link);
 
 echo "Данные сохранены!";
+}else{
+    exit("Данные не переданы");
+}
 ?>
