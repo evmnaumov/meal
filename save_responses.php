@@ -37,6 +37,7 @@ foreach($day as $value){
 //проверяем, существует ли запись ответов пользователя
 $user_ans = msqli_query($link, 'SELECT * FROM asnwers WHERE user_id = "'.$user_id.'"');
 $user_exist = mysqli_fetch_row($user_ans);
+print_r($user_exist);
 if(emty($user_exist)){
     mysqli_query($link,'INSERT INTO answers (user_id) VALUES ("'.$user_id.'")');
 }
