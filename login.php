@@ -2,7 +2,7 @@
 include("session.php");
 if(!empty($login) or !empty($user_id)){
   header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
-}else{
+}
 ?>
 <html>
 <head>
@@ -29,4 +29,3 @@ if(!empty($login) or !empty($user_id)){
 </p></form>
 </body>
 </html>
-<?php } ?>
