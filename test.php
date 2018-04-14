@@ -1,11 +1,10 @@
 <?php
 include("bd.php");
-$answer_query = 'SELECT `mon` FROM `answers` WHERE user_id="4"';
-$answer = mysqli_query($link,$answer_query);
-while ($ans_row = mysqli_fetch_row($answer)){
-        $ans = $ans_row[0];
-        $ameal = explode(",",$ans);
-        print_r($ameal);
-}
-mysqli_free_result($answer);
+include ("bd.php");
+
+//проверяем, существует ли запись ответов пользователя, если нет - создаем
+$user_ans = msqli_query($link, 'SELECT * FROM asnwers WHERE user_id = "'.$user_id.'"');
+$user_exist = mysqli_fetch_row($user_ans);
+print_r($user_exist);
+mysqli_free_result($user_ans);
 ?>
