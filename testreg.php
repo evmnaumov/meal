@@ -34,6 +34,8 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     $_SESSION['user_id']=$myrow['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
     $_SESSION['admin']=$myrow['admin'];
     $_SESSION['location']=$myrow['location'];
+    $_SESSION['name']=$myrow['name'];
+    $_SESSION['last_name']=$myrow['last_name'];
     header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
     }
  else {

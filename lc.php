@@ -1,14 +1,5 @@
 <?php
-//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
-session_start();
-if (empty($_SESSION['login']) or empty($_SESSION['user_id']))
-{
-  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/login.php");
-  exit();
-}
-$login = $_SESSION['login'];
-$user_id = $_SESSION['user_id'];
-$admin = $_SESSION['admin'];
+include("session.php");
 ?>
 <html>
 <head>
@@ -16,7 +7,8 @@ $admin = $_SESSION['admin'];
 </head>
 <body>
 <h2>Главная страница</h2>
-<p>Вы вошли на сайт, как "<?php echo $login; ?>"</p>
+<p>Добрый день, <?php echo $name." ".$last_name; ?></p>
+<p>Ваш e-mail: <?php echo $login; ?></p>
 <br>
 <?php
 if ($admin == 1){

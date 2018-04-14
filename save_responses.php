@@ -1,13 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['login']) or empty($_SESSION['user_id']))
-{
-  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/login.php");
-}else{
+include ("session.php");
 if(isset($_POST['answer'])){
-$login = $_SESSION['login'];
-$user_id = $_SESSION['user_id'];
-$admin = $_SESSION['admin'];
 include ("bd.php");
 
 //проверяем, существует ли запись ответов пользователя, если нет - создаем
@@ -53,6 +46,5 @@ mysqli_close($link);
 header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
 }else{
     exit("Данные не переданы<br><a href=\"lc.php\">Личный кабинет</a>");
-}
 }
 ?>
