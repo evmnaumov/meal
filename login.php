@@ -8,10 +8,10 @@ if(!empty($login) or !empty($user_id)){
 ?>
 <html>
 <head>
-<title>Главная страница</title>
+<title>Страница входа</title>
 </head>
 <body>
-<h2>Главная страница</h2>
+<h2>Страница входа</h2>
 <form action="testreg.php" method="post">
 <!--****  testreg.php - это адрес обработчика. То есть, после нажатия на кнопку  "Войти", данные из полей отправятся на страничку testreg.php методом  "post" ***** -->
   <p>

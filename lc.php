@@ -4,10 +4,10 @@ include ("bd.php");
 ?>
 <html>
 <head>
-<title>Главная страница</title>
+<title>Личный кабинет</title>
 </head>
 <body>
-<h2>Главная страница</h2>
+<h2>Личный кабинет</h2>
 <p>Добрый день, <?php echo $user_name." ".$user_last_name; ?></p>
 <p>Вы вошли с логином: <?php echo $login; ?></p>
 <p>Ваше расположение: 
@@ -15,8 +15,6 @@ include ("bd.php");
 $location = mysqli_query($link, 'SELECT location FROM `location` WHERE loc_id = "'.$user_location.'"');
 $user_loc = mysqli_fetch_row($location);
 echo $user_loc[0]; ?></p>
-
-
 <br>
 <?php
 if ($admin == 1){

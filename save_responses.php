@@ -38,7 +38,7 @@ foreach($day as $value){
         break;
    }
 $ans_query = 'UPDATE answers SET '.$str.' WHERE user_id="'.$user_id.'"'; 
-mysqli_query($link, $ans_query);  
+mysqli_query($link, $ans_query);
 $i=$i+1;
 }
 mysqli_close($link);

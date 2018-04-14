@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Messenger</title>
+<title>Меню</title>
 <style>
 #text{
     width: 220px;
@@ -11,6 +11,7 @@
 </head>
 <body>
 <div id="content">
+<p><b>Важно! Каждая позиция должна писаться с новой строки!</b></p>
 <form action='do.php' method='post'>
 <table border="1">
 <tr>
