@@ -5,7 +5,7 @@ if($admin==0){
     header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
 }
 if (empty($_GET['page'])){
-    $page = "menu.php";
+    $page = "menu";
 }
 ?>
 <html>
@@ -16,6 +16,8 @@ if (empty($_GET['page'])){
 <p><?php echo $user_name." ".$user_last_name; ?></p>
 <p>Вы вошли с логином: <?php echo $login; ?></p>
 <p>Вернуться в <a href="lc.php">личный кабинет</a><p>
-<iframe src="<?php echo $page; ?>" frameborder="0"></iframe>
+<p><a href="admin.php?page=menu">Редактировать меню</a></p>
+<p><a href="admin.php?page=responses">Сделать выгрузку</a></p>
+<iframe src="<?php echo $page; ?>.php" frameborder="0"></iframe>
 </body>
 </html>
