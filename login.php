@@ -1,6 +1,8 @@
 <?php
-//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
-session_start();
+include("session.php");
+if(!empty($login) or !empty($user_id)){
+  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
+}else{
 ?>
 <html>
 <head>
@@ -27,3 +29,4 @@ session_start();
 </p></form>
 </body>
 </html>
+<?php } ?>
