@@ -18,6 +18,6 @@ if (empty($_GET['page'])){
 <p>Вернуться в <a href="lc.php">личный кабинет</a><p>
 <p><a href="admin.php?page=menu">Редактировать меню</a></p>
 <p><a href="admin.php?page=responses">Сделать выгрузку</a></p>
-<iframe src="<?php echo $page; ?>.php" frameborder="0"></iframe>
+<iframe src="<?php echo $_GET['page']; ?>.php" frameborder="0" width="100%" height="100%"></iframe>
 </body>
 </html>
