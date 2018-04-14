@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (empty($_SESSION['login']) or empty($_SESSION['user_id']))
+{
+  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/login.php");
+}else{
 if(isset($_POST['answer'])){
 $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
@@ -46,8 +50,9 @@ $i=$i+1;
 }
 mysqli_close($link);
 
-echo "Данные сохранены!";
+header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
 }else{
     exit("Данные не переданы");
+}
 }
 ?>
