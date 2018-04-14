@@ -1,5 +1,6 @@
 <?php
-include("session.php");
+include ("session.php");
+include ("bd.php");
 ?>
 <html>
 <head>
@@ -8,7 +9,8 @@ include("session.php");
 <body>
 <h2>Главная страница</h2>
 <p>Добрый день, <?php echo $user_name." ".$user_last_name; ?></p>
-<p>Ваш e-mail: <?php echo $login; ?></p>
+<p>Вы вошли с логином: <?php echo $login; ?></p>
+<p>Ваше расположение: <?php echo $user_location; ?></p>
 <br>
 <?php
 if ($admin == 1){
@@ -30,9 +32,6 @@ if ($admin == 1){
 <td class="col_5"><h4>Десерт</h4></td>
 </tr>
 <?php
-include ("bd.php");
-mysqli_query($link,"SET NAMES 'utf8'");
-
 for($i=1;$i<=5;){
 switch($i){
     case 1: $day = "Понедельник";
