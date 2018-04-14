@@ -7,7 +7,7 @@ include("session.php");
 </head>
 <body>
 <h2>Главная страница</h2>
-<p>Добрый день, <?php echo $name." ".$last_name; ?></p>
+<p>Добрый день, <?php echo $user_name." ".$user_last_name; ?></p>
 <p>Ваш e-mail: <?php echo $login; ?></p>
 <br>
 <?php
