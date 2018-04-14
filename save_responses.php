@@ -9,7 +9,7 @@ include ("bd.php");
 //проверяем, существует ли запись ответов пользователя, если нет - создаем
 $user_ans = mysqli_query($link, 'SELECT user_id FROM `answers` WHERE user_id = "'.$user_id.'"');
 $user_exist = mysqli_fetch_row($user_ans);
-if(emty($user_exist)){
+if(empty($user_exist)){
     mysqli_query($link,'INSERT INTO answers (user_id) VALUES ("'.$user_id.'")');
 }
 mysqli_free_result($user_ans);
