@@ -5,6 +5,17 @@ $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
 $admin = $_SESSION['admin'];
 include ("bd.php");
+
+//проверяем, существует ли запись ответов пользователя, если нет - создаем
+$user_ans = msqli_query($link, 'SELECT * FROM asnwers WHERE user_id = "'.$user_id.'"');
+$user_exist = mysqli_fetch_row($user_ans);
+print_r($user_exist);
+if(emty($user_exist[0])){
+    mysqli_query($link,'INSERT INTO answers (user_id) VALUES ("'.$user_id.'")');
+}
+mysqli_free_result($user_ans);
+
+//записываем ответы
 $day=$_POST['answer'];
 $i=1;
 foreach($day as $value){
@@ -30,15 +41,6 @@ foreach($day as $value){
         $str = "fri=\"".$data."\"";
         break;
    }
-//проверяем, существует ли запись ответов пользователя
-$user_ans = msqli_query($link, 'SELECT * FROM asnwers WHERE user_id = "'.$user_id.'"');
-$user_exist = mysqli_fetch_row($user_ans);
-print_r($user_exist);
-if(emty($user_exist)){
-    mysqli_query($link,'INSERT INTO answers (user_id) VALUES ("'.$user_id.'")');
-}
-mysqli_free_result($user_ans);
-//записываем ответы
 $ans_query = 'UPDATE answers SET '.$str.' WHERE user_id="'.$user_id.'"'; 
 mysqli_query($link, $ans_query);  
 $i=$i+1;
