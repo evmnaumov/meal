@@ -14,7 +14,7 @@ include ("bd.php");
 <?php 
 $location = mysqli_query($link, 'SELECT location FROM `location` WHERE loc_id = "'.$user_location.'"');
 $user_loc = mysqli_fetch_row($location);
-echo $user_location[0]; ?></p>
+echo $user_loc[0]; ?></p>
 
 
 <br>
