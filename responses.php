@@ -11,7 +11,7 @@ include ("bd.php");
 <?php
 $location = mysqli_query($link, 'SELECT * FROM `location`');
 while($loc_row = mysqli_fetch_row($location)){
-    echo "<h3>".$loc_row['location']."</h3>";
+    echo "<h3>".$loc_row[1]."</h3>";
     echo "<table>
     <tr><td rowspan=\"2\" textalign=\"center\">>Фамилия и Имя</td>
     <td colspan=\"5\" textalign=\"center\">Понедельник</td>
@@ -30,7 +30,7 @@ while($loc_row = mysqli_fetch_row($location)){
         $i=$i+1;
     }
     echo "</tr>";    
-    $user = mysqli_query($link, 'SELECT * FROM `users` WHERE location="'.$loc_row['loc_id'].'"');
+    $user = mysqli_query($link, 'SELECT * FROM `users` WHERE location="'.$loc_row[0].'"');
     while($user_row = mysqli_fetch_row($user)){
         echo "<tr><td>".$user_row['last_name']." ".$user_row['name']."</td>";
         for ($j=1;$j<=5;){
