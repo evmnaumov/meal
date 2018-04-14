@@ -32,7 +32,7 @@ while($loc_row = mysqli_fetch_row($location)){
     echo "</tr>";    
     $user = mysqli_query($link, 'SELECT * FROM `users` WHERE location="'.$loc_row[0].'"');
     while($user_row = mysqli_fetch_row($user)){
-        echo "<tr><td>".$user_row['last_name']." ".$user_row['name']."</td>";
+        echo "<tr><td>".$user_row[4]." ".$user_row[3]."</td>";
         for ($j=1;$j<=5;){
             switch($j){
                 case 1: $day = "mon";
