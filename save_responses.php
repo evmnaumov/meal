@@ -1,11 +1,10 @@
 <?php
 session_start();
+if($_POST['answer']){
 $login = $_SESSION['login'];
 $user_id = $_SESSION['user_id'];
 $admin = $_SESSION['admin'];
 include ("bd.php");
-if($_POST['answer']){
-
 $day=$_POST['answer'];
 $i=1;
 foreach($day as $value){
