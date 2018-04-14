@@ -52,7 +52,7 @@ mysqli_close($link);
 
 header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
 }else{
-    exit("Данные не переданы");
+    exit("Данные не переданы<br><a href=\"lc.php\">Личный кабинет</a>");
 }
 }
 ?>
