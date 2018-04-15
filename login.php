@@ -1,8 +1,6 @@
 <?php
 session_start();
-$login = $_SESSION['login'];
-$user_id = $_SESSION['user_id'];
-if(!empty($login) or !empty($user_id)){
+if(isset($login) or isset($user_id)){
   header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
 }
 ?>
