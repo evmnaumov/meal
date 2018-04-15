@@ -49,6 +49,7 @@ while($loc_row = mysqli_fetch_row($location)){
             $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
             while ($answer_row = mysqli_fetch_row($answer)){
             if(!empty($answer_row[0])){
+                
                 $dishes = explode(",", $answer_row[0]);
                 foreach($dishes as $value){
                     if($value=="non"){
