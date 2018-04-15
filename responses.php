@@ -48,21 +48,22 @@ while($loc_row = mysqli_fetch_row($location)){
             }
             $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
             while ($answer_row = mysqli_fetch_row($answer)){
-            $dishes = explode(",", $answer_row[0]);
-            foreach($dishes as $value){
-                if($value=="non"){
-                    echo "<td>-----</td>";
-                }else{
-                $dish = mysqli_query($link, 'SELECT `name` FROM `dish` WHERE dish_id = "'.$value.'"');
-                while($dish_name = mysqli_fetch_row($dish)){
-                    
-                    echo "<td>".$dish_name[0]."</td>";
-                }
-                mysqli_free_result($dish);
+            if(!empty($answer_row[0])){
+                $dishes = explode(",", $answer_row[0]);
+                foreach($dishes as $value){
+                    if($value=="non"){
+                        echo "<td>-----</td>";
+                    }else{
+                    $dish = mysqli_query($link, 'SELECT `name` FROM `dish` WHERE dish_id = "'.$value.'"');
+                    while($dish_name = mysqli_fetch_row($dish)){
+                        echo "<td>".$dish_name[0]."</td>";
+                    }
+                    mysqli_free_result($dish);
+                    }
                 }
             }
+            } 
             $j=$j+1;
-        } 
         }
         mysqli_free_result($answer);
         echo "</tr>";   
