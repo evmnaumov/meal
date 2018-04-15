@@ -13,12 +13,12 @@ $location = mysqli_query($link, 'SELECT * FROM `location`');
 while($loc_row = mysqli_fetch_row($location)){
     echo "<h3>".$loc_row[1]."</h3>";
     echo "<table>
-    <tr><td rowspan=\"2\" textalign=\"center\">>Фамилия и Имя</td>
+    <tr><td rowspan=\"2\" textalign=\"center\">Фамилия и Имя</td>
     <td colspan=\"5\" textalign=\"center\">Понедельник</td>
-    <td colspan=\"5\" textalign=\"center\">>Вторник</td>
-    <td colspan=\"5\" textalign=\"center\">>Среда</td>
-    <td colspan=\"5\" textalign=\"center\">>Четверг</td>
-    <td colspan=\"5\" textalign=\"center\">>Пятница</td></tr>
+    <td colspan=\"5\" textalign=\"center\">Вторник</td>
+    <td colspan=\"5\" textalign=\"center\">Среда</td>
+    <td colspan=\"5\" textalign=\"center\">Четверг</td>
+    <td colspan=\"5\" textalign=\"center\">Пятница</td></tr>
     <tr>";
     for ($i=1;$i<=5;){
         echo "
@@ -46,7 +46,9 @@ while($loc_row = mysqli_fetch_row($location)){
                 case 5: $day = "fri";
                 break;
             }
-            $dishes = explode(",", $user_row[''.$day.'']);
+            $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
+            while ($answer_row = mysqli_fetch_row($answer)){
+            $dishes = explode(",", $answer_row[0]);
             foreach($dishes as $value){
                 $dish = mysqli_query($link, 'SELECT `name` FROM `dish` WHERE dish_id = "'.$value.'"');
                 while($dish_name = mysqli_fetch_row($dish)){
@@ -56,6 +58,8 @@ while($loc_row = mysqli_fetch_row($location)){
             }
             $j=$j+1;
         } 
+        }
+        mysqli_free_result($answer);
         echo "</tr>";   
     }
     mysqli_free_result($user);
