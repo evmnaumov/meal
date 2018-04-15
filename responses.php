@@ -12,7 +12,7 @@ include ("bd.php");
 $location = mysqli_query($link, 'SELECT * FROM `location`');
 while($loc_row = mysqli_fetch_row($location)){
     echo "<h3>".$loc_row[1]."</h3>";
-    echo "<table>
+    echo "<table border=\"1\">
     <tr><td rowspan=\"2\" textalign=\"center\">Фамилия и Имя</td>
     <td colspan=\"5\" textalign=\"center\">Понедельник</td>
     <td colspan=\"5\" textalign=\"center\">Вторник</td>
@@ -52,7 +52,11 @@ while($loc_row = mysqli_fetch_row($location)){
             foreach($dishes as $value){
                 $dish = mysqli_query($link, 'SELECT `name` FROM `dish` WHERE dish_id = "'.$value.'"');
                 while($dish_name = mysqli_fetch_row($dish)){
+                    if(empty($dish_name[0])){
+                        echo "<td>----</td>";
+                    }else{
                     echo "<td>".$dish_name[0]."</td>";
+                    }
                 }
                 mysqli_free_result($dish);
             }
