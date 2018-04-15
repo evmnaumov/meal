@@ -61,8 +61,10 @@ echo "<tr>
 $answer_query = 'SELECT `'.$qday.'` FROM `answers` WHERE user_id="'.$user_id.'"';
 $answer = mysqli_query($link,$answer_query);
 while ($ans_row = mysqli_fetch_row($answer)){
-        $ans = $ans_row[0];
-        $ameal = explode(",",$ans);
+        if(!empty($ans_row[0])){
+                $ans = $ans_row[0];
+                $ameal = explode(",",$ans);
+        }
 }
 mysqli_free_result($answer);
 $a = 0;
@@ -75,10 +77,12 @@ for($j=1;$j<=5;){
         while ($dish_arr = mysqli_fetch_row($dish_query)){
                 $dish_id = $dish_arr[0];
                 $dish_name = $dish_arr[1];
-                $sel_meal = $ameal[''.$a.''];
-                $sel = "";
-                if($sel_meal==$dish_id){
-                        $sel = "selected=\"selcted\"";
+                if(isset($ameal)){
+                        $sel_meal = $ameal[''.$a.''];
+                        $sel = "";
+                        if($sel_meal==$dish_id){
+                                $sel = "selected=\"selcted\"";
+                        }
                 }
                 echo "<option value=\"".$dish_id."\"".$sel.">".$dish_name."</option>";
         }
