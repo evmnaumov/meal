@@ -51,7 +51,7 @@ while($loc_row = mysqli_fetch_row($location)){
             $dishes = explode(",", $answer_row[0]);
             foreach($dishes as $value){
                 if($value=="non"){
-                    echo "<td>--Ничего--</td>";
+                    echo "<td>-----</td>";
                 }else{
                 $dish = mysqli_query($link, 'SELECT `name` FROM `dish` WHERE dish_id = "'.$value.'"');
                 while($dish_name = mysqli_fetch_row($dish)){
