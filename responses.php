@@ -47,13 +47,13 @@ while($loc_row = mysqli_fetch_row($location)){
                 break;
             }
             $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
-            if(empty($answer)){
+            while ($answer_row = mysqli_fetch_row($answer)){
+            if(empty($answer_row)){
                 for($d=1;$d<=25;){
                     echo "<td>-----</td>";
                     $d=$d+1;
                 }
-            }else{  
-                while ($answer_row = mysqli_fetch_row($answer)){
+            }else{    
                 $dishes = explode(",", $answer_row[0]);
                 foreach($dishes as $value){
                     if($value=="non"){
