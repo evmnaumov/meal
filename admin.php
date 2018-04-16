@@ -20,6 +20,9 @@ if (empty($_GET['page'])){
 <p>Вернуться в <a href="lc.php">личный кабинет</a><p>
 <p><a href="admin.php?page=menu">Редактировать меню</a></p>
 <p><a href="admin.php?page=responses">Сделать выгрузку</a></p>
+<form action="logout.php" method="post">
+<input type="submit" name="submit" value="Выйти">
+</form>
 <iframe src="<?php echo $page; ?>.php" frameborder="0" width="100%" height="100%"></iframe>
 </body>
 </html>
