@@ -4,10 +4,10 @@ session_start();
 // Проверяем, пусты ли переменные логина и id пользователя
 if (empty($_SESSION['login']) or empty($_SESSION['user_id']))
 {
-  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/login.php");
+  header("Location: http://".$_SERVER['HTTP_HOST']."/login.php");
 }
 else
    {
-    header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
+    header("Location: http://".$_SERVER['HTTP_HOST']."/lc.php");
     }
 ?>

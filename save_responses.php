@@ -43,7 +43,7 @@ $i=$i+1;
 }
 mysqli_close($link);
 
-header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
+header("Location: http://".$_SERVER['HTTP_HOST']."/lc.php");
 }else{
     exit("Данные не переданы<br><a href=\"lc.php\">Личный кабинет</a>");
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($login) or isset($user_id)){
-  header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
+  header("Location: http://".$_SERVER['HTTP_HOST']."/lc.php");
 }
 ?>
 <html>

@@ -2,7 +2,7 @@
 include ("session.php");
 //если пользователь не админ - нехуй шастать=)
 if($admin==0){
-    header("Location: http://".$_SERVER['HTTP_HOST']."/meal/lc.php");
+    header("Location: http://".$_SERVER['HTTP_HOST']."/lc.php");
 }
 if (empty($_GET['page'])){
     $page = "menu";

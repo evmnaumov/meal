@@ -36,7 +36,7 @@ $result = mysqli_query($link,"SELECT * FROM users WHERE login='$login'"); //из
     $_SESSION['location']=$myrow['location'];
     $_SESSION['name']=$myrow['name'];
     $_SESSION['last_name']=$myrow['last_name'];
-    header("Location: http://".$_SERVER['HTTP_HOST']."/meal");
+    header("Location: http://".$_SERVER['HTTP_HOST']);
     }
  else {
     //если пароли не сошлись
