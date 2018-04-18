@@ -89,7 +89,7 @@ if(isset($pass_message)){
     echo "<br>";
 }
 ?>
-<form action="user_settings.php">
+<form action="user_settings.php" method="post">
 <p>Если вы хотите изменить своё расположение, выберите его из списка:</p>
 <select name="user_location">
 <?php
