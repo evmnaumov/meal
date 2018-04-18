@@ -75,6 +75,17 @@ mysqli_free_result($user_query);
 <body>
 <p><?php echo $user_name." ".$user_last_name; ?></p>
 <p>Вы вошли с логином: <?php echo $login; ?></p>
+<a href="lc.php">Личный кабинет</a><br>
+<?php
+if(isset($pass_message)){
+    echo $pass_message;
+    echo "<br>";
+}
+if(isset($location_message)){
+    echo $location_message;
+    echo "<br>";
+}
+?>
 <form action="user_settings.php">
 <p>Если вы хотите изменить своё расположение, выберите его из списка:</p>
 <select name="user_location">
