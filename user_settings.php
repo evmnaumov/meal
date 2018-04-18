@@ -28,7 +28,7 @@ if (isset($_POST['new_password2'])){
     } 
 }
 //-------------------------------------------------
-if (isset($user_location) or isset($password) or isset($new_password1) or isset($new_password2)){
+if (!empty($user_location) or !empty($password) or !empty($new_password1) or !empty($new_password2)){
     $user_location = stripslashes($user_location);
     $user_location = htmlspecialchars($user_location);
     $password = stripslashes($password);
@@ -40,7 +40,7 @@ if (isset($user_location) or isset($password) or isset($new_password1) or isset(
 $user_query = mysqli_query($link, 'SELECT pass, location FROM `users` WHERE user_id="'.$user_id.'"');
 $user_pass_loc = mysqli_fetch_row($user_query);
 //Если задано, сохраняем новое расположение
-if(isset($user_location)){
+if(!empty($user_location)){
     $user_loc = $user_pass_loc[0];
     if($user_location!==$user_loc){
         mysqli_query($link, 'UPDATE users SET location="'.$user_location.'" WHERE user_id="'.$user_id.'"');
@@ -49,7 +49,7 @@ if(isset($user_location)){
 }
 //---
 //Если задано, изменяем пароль на новый
-if(isset($password) and isset($new_password1) and isset($new_password2)){
+if(!empty($password) and !empty($new_password1) and !empty($new_password2)){
     $pass_hash = hash('sha256', $password);
     $old_pass = $user_pass_loc[1];
     if($pass_hash==$old_pass){
@@ -77,12 +77,12 @@ mysqli_free_result($user_query);
 <p>Вы вошли с логином: <?php echo $login; ?></p>
 <a href="lc.php">Личный кабинет</a><br>
 <?php
-if(isset($pass_message)){
-    echo $pass_message;
-    echo "<br>";
-}
 if(isset($location_message)){
     echo $location_message;
+    echo "<br>";
+}
+if(isset($pass_message)){
+    echo $pass_message;
     echo "<br>";
 }
 ?>
