@@ -20,7 +20,7 @@ $user_pass = mysqli_query($link, 'SELECT pass FROM `users` WHERE user_id="'.$use
         if ($user_location==$locs[0]){
             $userl="selected=\"selected\"";
         }
-        echo "<option value=\"".$locs[0], $userl."\">".$locs[1]."</option>";
+        echo "<option value=\"".$locs[0]."\"".$userl."\">".$locs[1]."</option>";
     }
     mysqli_free_result($location);
 ?>
