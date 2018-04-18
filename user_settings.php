@@ -44,7 +44,7 @@ if(!empty($user_location)){
     $user_loc = $user_pass_loc[1];
     if($user_location!==$user_loc){
         mysqli_query($link, 'UPDATE users SET location="'.$user_location.'" WHERE user_id="'.$user_id.'"');
-        $location_message = "Ваше расположение сохранено";
+        $location_message = "<p class=\"success\">Ваше расположение сохранено</p>";
     }
 }
 //---
@@ -56,12 +56,12 @@ if(!empty($password) and !empty($new_password1) and !empty($new_password2)){
         if($new_password1==$new_password2){
             $new_pass_hash = hash('sha256', $new_password1);
             mysqli_query($link,'UPDATE users SET pass="'.$new_pass_hash.'" WHERE user_id="'.$user_id.'"');
-            $pass_message="Пароль изменён";
+            $pass_message="<p class=\"success\">Пароль изменён</p>";
         }else{
-            $pass_message = "Пароли не совпадают";
+            $pass_message = "<p class=\"errorpass\">Пароли не совпадают</p>";
         }
     }else{
-        $pass_message="Вы ввели неверный старый пароль";
+        $pass_message="<p class=\"errorpass\">Вы ввели неверный текущий пароль</p>";
     }
 }
 //---
@@ -76,6 +76,7 @@ mysqli_free_result($user_query);
 <p><?php echo $user_name." ".$user_last_name; ?></p>
 <p>Вы вошли с логином: <?php echo $login; ?></p>
 <a href="lc.php">Личный кабинет</a><br>
+<hr>
 <?php
 if(isset($location_message)){
     echo $location_message;
@@ -104,6 +105,7 @@ if(isset($pass_message)){
 <input name="password" type="password" size="25" maxlength="25" placeholder="Ваш текущий пароль"><br>
 <input name="new_password1" type="password" size="25" maxlength="25" placeholder="Новый пароль"><br>
 <input name="new_password2" type="password" size="25" maxlength="25" placeholder="и ещё раз">
+<br>
 <input type="submit" name="submit" value="Сохранить">
 </form>
 </body>
