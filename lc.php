@@ -16,6 +16,7 @@ $location = mysqli_query($link, 'SELECT location FROM `location` WHERE loc_id = 
 $user_loc = mysqli_fetch_row($location);
 echo $user_loc[0]; ?></p>
 <br>
+<a href="user_settings.php">Изменить настройки</a>
 <?php
 if ($admin == 1){
     echo "<a href=\"admin.php\">Админ-панель</a><br>";
