@@ -39,9 +39,6 @@ if (isset($user_location) or isset($password) or isset($new_password1) or isset(
     $new_password2 = htmlspecialchars($new_password2);
 $user_query = mysqli_query($link, 'SELECT pass, location FROM `users` WHERE user_id="'.$user_id.'"');
 $user_pass_loc = mysqli_fetch_row($user_query);
-echo $user_pass_loc[0];
-echo "<br>";
-echo $user_pass_loc[1];
 //Если задано, сохраняем новое расположение
 if(!empty($user_location)){
     $user_loc = $user_pass_loc[1];
