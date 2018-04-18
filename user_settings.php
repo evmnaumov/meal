@@ -28,7 +28,7 @@ if (isset($_POST['new_password2'])){
     } 
 }
 //-------------------------------------------------
-if (!empty($user_location) or !empty($password) or !empty($new_password1) or !empty($new_password2)){
+if (isset($user_location) or isset($password) or isset($new_password1) or isset($new_password2)){
     $user_location = stripslashes($user_location);
     $user_location = htmlspecialchars($user_location);
     $password = stripslashes($password);
