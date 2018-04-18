@@ -44,7 +44,7 @@ echo "<br>";
 echo $user_pass_loc[1];
 //Если задано, сохраняем новое расположение
 if(!empty($user_location)){
-    $user_loc = $user_pass_loc[0];
+    $user_loc = $user_pass_loc[1];
     if($user_location!==$user_loc){
         mysqli_query($link, 'UPDATE users SET location="'.$user_location.'" WHERE user_id="'.$user_id.'"');
         $location_message = "Ваше расположение сохранено";
@@ -54,7 +54,7 @@ if(!empty($user_location)){
 //Если задано, изменяем пароль на новый
 if(!empty($password) and !empty($new_password1) and !empty($new_password2)){
     $pass_hash = hash('sha256', $password);
-    $old_pass = $user_pass_loc[1];
+    $old_pass = $user_pass_loc[0];
     if($pass_hash==$old_pass){
         if($new_password1==$new_password2){
             $new_pass_hash = hash('sha256', $new_password1);
