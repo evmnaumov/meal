@@ -50,7 +50,7 @@ while($loc_row = mysqli_fetch_row($location)){
             while ($answer_row = mysqli_fetch_row($answer)){
                 print_r($answer_row);
                 echo "<br>";
-            if(empty($answer_row)){
+            if($answer_row==FALSE){
                 for($d=1;$d<=25;){
                     echo "<td>-----</td>";
                     $d=$d+1;
