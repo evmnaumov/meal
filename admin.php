@@ -42,7 +42,7 @@ if(isset($new_locs)){
 <?php
 $locs=mysqli_query($link, 'SELECT * FROM `location`');
 while($locs_row=mysqli_fetch_row($locs)){
-    echo "<input type=\"checkbox\" name=\"del_location[]\" value=\"".$locs_row[0].">".$locs_row[1];
+    echo "<input type=\"checkbox\" name=\"del_location[]\" value=\"".$locs_row[0]."\">".$locs_row[1];
     echo "<br>";
 }
 ?>
