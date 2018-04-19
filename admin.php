@@ -1,5 +1,6 @@
 <?php
 include ("session.php");
+include ("bd.php");
 //если пользователь не админ - нехуй шастать=)
 if($admin==0){
     header("Location: http://".$_SERVER['HTTP_HOST']."/lc.php");
@@ -20,6 +21,19 @@ if (empty($_GET['page'])){
 <p>Вернуться в <a href="lc.php">личный кабинет</a><p>
 <p><a href="admin.php?page=menu">Редактировать меню</a></p>
 <p><a href="admin.php?page=responses">Сделать выгрузку</a></p>
+<form action="admin.php" method="post">
+<label>Расположения пользователей:<label>
+<textarea name="locations">
+<?php
+$locs=mysqli_query($link, 'SELECT * FROM `location`');
+while($locs_row=mysqli_fetch_row($locs)){
+    $locals[] = $locs_row[1];
+}
+$locations = implode("\n", $locals);
+echo $locations;
+?>
+</textarea>
+</form>
 <form action="logout.php" method="post">
 <input type="submit" name="submit" value="Выйти">
 </form>
