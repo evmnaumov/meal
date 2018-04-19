@@ -16,7 +16,7 @@
     <select name="location">
     <?php
     include ("bd.php");
-    $query = 'SELECT * FROM location';
+    $query = 'SELECT * FROM locations';
     $options = mysqli_query($link, $query);
     foreach($options as $value){
      echo "<option value=".$value['loc_id'].">".$value['location']."</option>";

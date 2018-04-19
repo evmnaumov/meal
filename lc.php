@@ -12,7 +12,7 @@ include ("bd.php");
 <p>Вы вошли с логином: <?php echo $login; ?></p>
 <p>Ваше расположение: 
 <?php 
-$location = mysqli_query($link, 'SELECT location FROM `location` WHERE loc_id = "'.$user_location.'"');
+$location = mysqli_query($link, 'SELECT location FROM `locations` WHERE loc_id = "'.$user_location.'"');
 $user_loc = mysqli_fetch_row($location);
 echo $user_loc[0]; ?></p>
 <br>

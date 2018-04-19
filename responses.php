@@ -9,7 +9,7 @@ include ("bd.php");
 </head>
 <body>
 <?php
-$location = mysqli_query($link, 'SELECT * FROM `location`');
+$location = mysqli_query($link, 'SELECT * FROM `locations`');
 while($loc_row = mysqli_fetch_row($location)){
     echo "<h3>".$loc_row[1]."</h3>";
     echo "<table border=\"1\">

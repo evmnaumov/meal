@@ -15,7 +15,7 @@ if(isset($_POST['del_location'])){
 }
 if(isset($del_locs)){
     foreach($del_locs as $value){
-        mysqli_query($link, 'DELETE FROM `location` WHERE loc_id="'.$value.'"');
+        mysqli_query($link, 'DELETE FROM `locations` WHERE loc_id="'.$value.'"');
     }
 }
 if(isset($_POST['new_location'])){
@@ -24,7 +24,7 @@ if(isset($_POST['new_location'])){
 if(isset($new_locs)){
     $new_locs = stripslashes($new_locs);
     $new_locs = htmlspecialchars($new_locs);
-    mysqli_query($link, 'INSERT INTO location (location) VALUE ("'.$new_locs.'")');
+    mysqli_query($link, 'INSERT INTO locations (location) VALUE ("'.$new_locs.'")');
 }
 ?>
 <html>
@@ -41,7 +41,7 @@ if(isset($new_locs)){
 <label>Расположения пользователей:<label>
 <br>
 <?php
-$locs=mysqli_query($link, 'SELECT * FROM `location`');
+$locs=mysqli_query($link, 'SELECT * FROM `locations`');
 while($locs_row=mysqli_fetch_row($locs)){
     echo "<input type=\"checkbox\" name=\"del_location[]\" value=\"".$locs_row[0]."\">".$locs_row[1];
     echo "<br>";
