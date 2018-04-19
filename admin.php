@@ -15,7 +15,7 @@ if(isset($_POST['del_location'])){
 }
 if(isset($del_locs)){
     foreach($del_locs as $value){
-        mysqli_query($link, 'DELETE FROM location WHERE loc_id="'.$value.'"');
+        mysqli_query($link, 'DELETE FROM `location` WHERE loc_id="'.$value.'"');
     }
 }
 if(isset($_POST['new_location'])){
