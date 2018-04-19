@@ -10,6 +10,20 @@ if (empty($_GET['page'])){
 }else{
     $page = $_GET['page'];
 }
+if(isset($_POST['locations'])){
+    $post_locals = $_POST['locations'];
+}
+if(isset($post_locals)){
+    $post_locations=explode("\n", $post_locals);
+    foreach($post_locations as $value){
+        $locs_query = mysqli_query($link, 'SELECT location FROM `location` WHERE location="'.$value.'"');
+        $locs_result=mysqli_fetch_row($locs_query);
+        if($locs_result[0]!==$value){
+            mysqli_query($link, 'INPUT INTO location (location) VALUE ("'.$value.'")');
+        }
+    }
+    mysqli_free_result($locs_query);
+}
 ?>
 <html>
 <head>
@@ -33,6 +47,7 @@ $locations = implode("\n", $locals);
 echo $locations;
 ?>
 </textarea>
+<input type="submit" name="submit" value="Сохранить">
 </form>
 <form action="logout.php" method="post">
 <input type="submit" name="submit" value="Выйти">
