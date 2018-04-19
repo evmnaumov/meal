@@ -7,12 +7,10 @@
 <form action="save_user.php" method="post">
 <!--**** save_user.php - это адрес обработчика.  То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей  отправятся на страничку save_user.php методом "post" ***** -->
 <p>
-    <label>Ваш имя::<br></label>
-    <input name="name" type="text" required size="35" maxlength="35">
+    <input name="name" type="text" required size="35" maxlength="35"  placeholder="Ваше имя">
   </p> 
   <p>
-    <label>Ваша фамилия::<br></label>
-    <input name="last_name" type="text" required size="35" maxlength="35">
+    <input name="last_name" type="text" required size="35" maxlength="35" placeholder="Ваша фамилия">
   </p>
   <p>
     <select name="location">
@@ -27,12 +25,10 @@
     </select>
   </p> 
   <p>
-    <label>Ваш логин::<br></label>
-    <input name="login" type="email" size="25" maxlength="25" required>
+    <input name="login" type="email" size="25" maxlength="25" required placeholder="Ваш e-mail">
   </p> 
   <p>
-    <label>Ваш пароль:<br></label>
-    <input name="password" type="password" size="25" maxlength="25" required>
+    <input name="password" type="password" size="25" maxlength="25" required placeholder="Ваш пароль">
   </p> 
 <p>
 <input type="submit" name="submit" value="Зарегистрироваться">
