@@ -47,15 +47,13 @@ while($loc_row = mysqli_fetch_row($location)){
                 break;
             }
             $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
-            while ($answer_row = mysqli_fetch_row($answer)){
-                print_r($answer_row);
-                echo "<br>";
             if($answer_row==FALSE){
                 for($d=1;$d<=25;){
                     echo "<td>-----</td>";
                     $d=$d+1;
                 }
-            }else{    
+            }  
+            while ($answer_row = mysqli_fetch_row($answer)){
                 $dishes = explode(",", $answer_row[0]);
                 foreach($dishes as $value){
                     if($value=="non"){
@@ -68,7 +66,6 @@ while($loc_row = mysqli_fetch_row($location)){
                     mysqli_free_result($dish);
                     }
                 }
-            }
             } 
             $j=$j+1;
         }
