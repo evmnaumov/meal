@@ -39,6 +39,7 @@ if(isset($new_locs)){
 <p><a href="admin.php?page=responses">Сделать выгрузку</a></p>
 <form action="admin.php" method="post">
 <label>Расположения пользователей:<label>
+<br>
 <?php
 $locs=mysqli_query($link, 'SELECT * FROM `location`');
 while($locs_row=mysqli_fetch_row($locs)){
@@ -47,6 +48,7 @@ while($locs_row=mysqli_fetch_row($locs)){
 }
 ?>
 <input type="text" name="new_location" placeholder="Введите имя нового размещения">
+<p>Отмеченные расположения будут УДАЛЕНЫ!!!</p>
 <input type="submit" name="submit" value="Сохранить">
 </form>
 <form action="logout.php" method="post">
