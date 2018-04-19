@@ -22,9 +22,11 @@ if(isset($_POST['new_location'])){
     $new_locs = $_POST['new_location'];
 }
 if(isset($new_locs)){
-    $new_locs = stripslashes($new_locs);
-    $new_locs = htmlspecialchars($new_locs);
-    mysqli_query($link, 'INSERT INTO locations (location) VALUE ("'.$new_locs.'")');
+    if(!empty($new_locs)){
+        $new_locs = stripslashes($new_locs);
+        $new_locs = htmlspecialchars($new_locs);
+        mysqli_query($link, 'INSERT INTO locations (location) VALUE ("'.$new_locs.'")');
+    }
 }
 ?>
 <html>
