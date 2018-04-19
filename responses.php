@@ -47,7 +47,7 @@ while($loc_row = mysqli_fetch_row($location)){
                 break;
             }
             $answer = mysqli_query($link, 'SELECT `'.$day.'` FROM `answers` WHERE user_id="'.$user_row[0].'"');
-            if($answer==FALSE){
+            if(empty($answer)){
                 for($d=1;$d<=25;){
                     echo "<td>-----</td>";
                     $d=$d+1;
