@@ -1,7 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 4.7.9
 -- https://www.phpmyadmin.net/
---
 -- Хост: localhost
 -- Время создания: Апр 15 2018 г., 11:36
 -- Версия сервера: 5.7.21-0ubuntu0.16.04.1
